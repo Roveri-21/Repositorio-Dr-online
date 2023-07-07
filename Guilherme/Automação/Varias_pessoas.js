@@ -59,3 +59,18 @@ describe('template spec', () => {
   });
 });
 })
+
+
+/* Produção
+    cy.visit('https://www.pssaude.com.br/');
+    cy.wait(1000);
+    cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type('grsilva');
+    cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type('gui21@RS');
+    cy.get('#btnEntrar').click();  */
+
+/* homologação
+    cy.visit('https://homol.pssaude.com.br:4000/');
+    cy.wait(1000);
+    cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type('Gcypress');
+    cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type('gX$#951X7RgX');
+    cy.get('#btnEntrar').click();  */
