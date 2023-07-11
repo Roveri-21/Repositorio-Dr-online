@@ -1,4 +1,4 @@
-const faker = require('faker');
+// const faker = require('faker');
   const cad =[
     {
       nome: 'Anna Flávia Nunes dos Santos',
@@ -115,14 +115,16 @@ const faker = require('faker');
       } */
   ]
 cad.forEach((item, index)=> {
+  
 describe('template spec', () => {
   //it('Pessoa_fisica', () => {
   it(`${index + 1} - fills and submits the form based on a predefined list of data`, () => {
     cy.visit('https://homol.pssaude.com.br:4000/');
+
     cy.wait(1000);
     cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type('Gcypress');
     cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type('gX$#951X7RgX');
-    cy.get('#btnEntrar').click();  
+    cy.get('#btnEntrar').click();
     cy.get('#search-function-ps').should('be.enabled');
     cy.wait(1000);
     cy.get('#search-function-ps').type('Pessoa física');
@@ -130,55 +132,10 @@ describe('template spec', () => {
     cy.contains('.dropdown-item-color', 'Pessoa Física - Completo').click();
     cy.wait(1000);
     cy.get('#campo-localizar').select('nm_pessoa').type('nm_pessoa');
-    
-    const usuario = cy.criarUsuario(item.nome)
-    
-    cy.get('#txt-localizar').type(usuario);
-    
-    /* cy.contains('button','Localizar').click()
-    cy.contains(item.nome).dblclick();
-     */
-
-/* 
-
-    cy.wait(1000);
-    cy.get('#I387_nm_pessoa').type(item.nome) //input nome
-    cy.contains('label', 'CPF').click()
-    .trigger('keydown', { keyCode: 50 }) 
-    .trigger('input')
-    .type(item.cpf)
-    cy.get('#I387_dt_nascimento') //input data
-    .click()
-    .trigger('keydown', { keyCode: 35 }) 
-    .trigger('input')
-    .type(item.datanascimento);
-    cy.get('#btn-save').click();
-    //complemento residencial
-    cy.contains('a','Complemento').click();
-    cy.get('#btn-md-new').click();//clica em novo
-    cy.get('#I387_pessoa_fisica_compl-ie_tipo_complemento').select('2').should('be.visible');
-    cy.get('#I387_pessoa_fisica_compl-ds_email').type(item.email)
-    cy.get('#I387_pessoa_fisica_compl-nr_celular').type(item.telefone)
-    cy.get('#I387_pessoa_fisica_compl-nr_ddd_celular').type(item.DDD)
-    cy.get('#I387_pessoa_fisica_compl-nr_ddi_celular').type(item.DDI)
-    cy.get('#btn-md-save').click()
- */
+  
+    cy.criarUsuario(item.nome).then((usuario) => {
+      cy.get('#txt-localizar').type(usuario);
+    });
   });
 });
-})
-
-
-
-/* Produção
-    cy.visit('https://www.pssaude.com.br/');
-    cy.wait(1000);
-    cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type('grsilva');
-    cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type('gui21@RS');
-    cy.get('#btnEntrar').click();  */
-
-/* homologação
-    cy.visit('https://homol.pssaude.com.br:4000/');
-    cy.wait(1000);
-    cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type('Gcypress');
-    cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type('gX$#951X7RgX');
-    cy.get('#btnEntrar').click();  */
+});
