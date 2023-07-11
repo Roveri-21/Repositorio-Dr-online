@@ -1,0 +1,4 @@
+git reset --hard HEAD^
+//comando para remover ultimo comit caso tenha dado o erro 
+
+//fatal: Need to specify how to reconcile divergent branches.
