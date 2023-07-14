@@ -16,3 +16,38 @@ Cypress.Commands.add('criarUsuario', (nome) => {
         return iniciais + ultimoNome;
       });
       
+      Cypress.Commands.add("login", (username, password) => {
+        cy.viewport(1500, 800);
+        cy.visit("https://homol.pssaude.com.br:4000/#");
+        cy.get(':nth-child(1) > .mx-auto > .input-group > .form-control').type(username);
+        cy.get(':nth-child(2) > .mx-auto > .input-group > .form-control').type(password);
+        cy.contains('button', 'Entrar').click();
+      });
+    
+    import { realMouseDown, realMouseMove, realMouseUp } from "cypress-real-events";
+    
+    Cypress.Commands.add("dragAndDrop", { prevSubject: true }, (subject, target) => {
+      cy.wrap(subject).realDragAndDrop(target);
+    });
+    
+    import moment from "moment";
+    
+    Cypress.Commands.add("generateFakeLeadData", () => {
+      let faker = require("faker-br");
+      const moment = require("moment");
+      faker.locale = 'pt_BR';
+      let randomname = faker.name.findName();
+      let randomcpf = faker.br.cpf();
+      let data = faker.date.past(20, 1990);
+      let user = faker.internet.email();
+      let randombirth = moment(data).format("YYYY-MM-DD");
+      let number = faker.phone.phoneNumber("(62) 99###-####");
+    
+      return {
+        randomname,
+        randomcpf,
+        user,
+        randombirth,
+        number
+      };
+    });
