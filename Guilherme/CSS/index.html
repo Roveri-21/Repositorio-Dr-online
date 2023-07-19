@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+   <head>
+      <meta charset='UTF-8'>
+      <meta name='viewport' content='IE=edge'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>WebPets</title>
+      <link rel=stylesheet href=Estilo.css>
+      <script src=Login/Codigos.js></script>
+      <script src=Ajax.js></script>
+      <script type=module src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js></script>
+      <script nomodule src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js></script>
+   </head>
+   <body>
+      <div class='menu'>
+         <ul>
+            <li class='lista ativa'>
+               <a href='http://localhost/weblocal/TCC/Home.ASP'>
+                  <span class='icone'>
+                     <ion-icon name='paw-outline'></ion-icon>
+                  </span>
+                  <span class='lista'>Home</span>
+               <a>
+            </li>
+         </ul>
+         <ul>
+         <li class='lista'>
+         <a href='#' class='transacao'>
+         <span class='icone'><ion-icon name='cash-outline'></ion-icon></span>
+         <span class='lista'>Transações</span>
+         <a>
+         <ul class='Itens_transacao'>
+         <li><a href='#' class='pix'>Pix</a></li>
+         <li><a href='#' class='dinheiro'>Dinheiro</a></li>
+         <li><a href='#' class='cartao'>Cartão</a></li>
+         </ul>
+         </li>
+         </ul>
+         <ul>
+            <li class='lista'>
+               <a href='' onclick='abrirPag(Estoque)'>
+               <span class='icone'>
+                  <ion-icon name='cube-outline'></ion-icon>
+                  </ion-icon>
+               </span>
+               <span class='lista'>Estoque</span>
+               <a>
+            </li>
+         </ul>
+         <ul>
+            <li class='lista'>
+               <a href='#'>
+               <span class='icone'>
+                  <ion-icon name='person-outline'></ion-icon>
+                  </ion-icon>
+               </span>
+               <span class='lista'>Admin</span>
+               <a>
+            </li>
+         </ul>
+         <ul>
+            <li class='lista'>
+               <a href='#'>
+               <span class='icone'>
+                  <ion-icon name='reader-outline'></ion-icon>
+                  </ion-icon>
+               </span>
+               <span class='lista'>Logs</span>
+               <a>
+            </li>
+         </ul>
+         <ul>
+            <li class='lista'>
+               <a href='#'>
+               <span class='icone'>
+                  <ion-icon name='settings-outline'></ion-icon>
+               </span>
+               <span class='lista'>Configurações</span>
+               <a>
+            </li>
+         </ul>
+         <ul>
+            <li class='lista'>
+               <a href='http://localhost/weblocal/TCC/Login/Login.ASP'>
+               <span class='icone'>
+                  <ion-icon name='log-out-outline'></ion-icon>
+               </span>
+               <span class='lista'>Sair</span>
+               <a>
+            </li>
+         </ul>
+      </div>
+      <div class='conteudo'>
+         <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div style='display:flex; justify-content:space-between;'>
+               <label for='nome'>Nome:</label>
+               <input type='text' id='nome' name='nome'  size='20'>
+               <label for='data'>Data de Nascimento:</label>
+               <input type='date' id='data' name='data'>
+               <button type='submit'>Enviar</button>
+            </div>
+         </fieldset>
+         <div class='tabela' id='tabela'>
+            <fieldset>
+               <legend>Tabela de Dados</legend>
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>CPF</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>João Silva</td>
+                        <td>01/01/1990</td>
+                        <td>123.456.789-00</td>
+                     </tr>
+                     <tr>
+                        <td>Maria Souza</td>
+                        <td>10/05/1985</td>
+                        <td>987.654.321-11</td>
+                     </tr>
+                     <tr>
+                        <td>Carlos Oliveira</td>
+                        <td>20/12/1982</td>
+                        <td>111.222.333-44</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </fieldset>
+            </fieldset>    
+         </div>
+      </div>
+      <header>
+        <div class="pesquisa-bar">
+          <form>
+            <input type="text" placeholder="Pesquisar...">
+            <button type="submit">Buscar</button>
+          </form>
+        </div>
+      </header>
+   </body>
+</html>
