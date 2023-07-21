@@ -1,4 +1,102 @@
-/* git reset --hard HEAD^ */
-//comando para remover ultimo comit caso tenha dado o erro 
+Git
 
-//fatal: Need to specify how to reconcile divergent branches.
+	Para navegar em uma pasta podemos colocar cd o nome da pasta e a barra, não precisamos informar a pasta completa
+		(cd Downloads/)
+	
+	Para sair de uma pasta devemos usar o seguinte comando
+		(cd ..)
+	
+	Para ver o conteudo de uma pasta devemos usar o seguinte comando
+		(ls)
+	
+	Para ver todas as paginas presentes adicione o seguinte comando 
+		(Dir)
+		
+	Para ver a versão so Git basta digitar 
+		 (git --version)
+		 
+	Para criar umm repositorio basta digitar o mesmo vai ficar com uma teg(Master)
+		(git init)
+
+	Para visualaizar algumas informações do git basta usar o seguinte comando
+		(git status) = ele vai mostra todos os status do git e or arquivos
+
+	Para que o git salve um pasta, precisamos que ele monitore os meus codigos, para que o git monitore basta fazer o seguinte codigos
+		(git add "Nome do arquivo")
+	Exemplo
+		(git add index.html)
+	
+	Caso queira que ele pegue todos os arquivos basta colocar 
+		(git add .)
+	
+	Para remover um arquivo devemos utilizar o seguinte codigo 
+		(git rm --cached "nome do arquivo")
+	
+	Para salvar o que foi feito no arquivo devemos fazer um comit e descrever uma mensagem, sendo assim devemos utilizar o seguinte codigo
+		(git commit -m "Mensagen descritiva")
+	
+	Para pegar algumas informações do git como usuario, commits entre outros, devemos usar o seguite comando
+		(git log)
+	
+	Para visualizar todos os comits em uma linha basta usar o seguinte codigo
+		( git log --oneline)
+	
+	Para ver mais informações do repositorio podemos usar o seguinte codigo
+		(git log -p)
+	
+    Comando para atualizar os codigos com os ultimos comits 
+        (git pull)
+	
+	Link para formatar os logs 
+		https://devhints.io/git-log
+	
+	Para que o git iguinore um arquivo devems criar um arquivo com o nome .gitignore sendo assim dentro dele devemos informar qual arquivo o git vai iguinorar
+	
+	Para criar um servidor basta colocar o seguinte codigo
+		(mkdir nome_do_servidor)
+	Em seguida entre no servidor usando o cd exemplo 
+		(cd nome_do_servidor/)
+	E execute o comando 
+		(Git init)
+	Para criar um servidor onde tenha apenas as copias das pastas coloque 
+		(Git init --bare)
+	
+	Para adicionar um repositorio remoto use o codigo
+		(git remote add guirepositorio) e adicione um endereço pode ser varias coisas como url,caminho da pasta entre outros
+	
+	Para conferir o repositorio basta usar o codigo 
+		(git remote) ou (  git remote -v)
+	
+	Para clonar um repositorio basta criar colocar o seguitne comando 
+		($  git clone "nome,caminho ou repositorio do repositorio")
+	
+	Exemplo Pratico
+		Para clonar um repositorio para outro pc basta 
+			guilh@DESKTOP-H6VEL24 MINGW64 ~/Desktop/Projetos/GitTreinamento/servidorGui (master)
+			$ mkdir Roveri    "Criei um novo repositorio para o Roveri "
+
+			guilh@DESKTOP-H6VEL24 MINGW64 ~/Desktop/Projetos/GitTreinamento/servidorGui (master)
+			$ cd Roveri 	"Em seguida escolhi ele"
+
+			guilh@DESKTOP-H6VEL24 MINGW64 ~/Desktop/Projetos/GitTreinamento/servidorGui/Roveri (master)
+			$ git clone /Roveri
+
+			Please make sure you have the correct access rights
+			and the repository exists.
+
+			guilh@DESKTOP-H6VEL24 MINGW64 ~/Desktop/Projetos/GitTreinamento/servidorGui/Roveri (master)
+			$  git clone "Mais o nome do repositorio"
+			
+			
+			Apos clonar um repositorio ele retornara a seguinte mensagem				
+				($  git clone /c/Users/guilh/Desktop/Projetos/GitTreinamento/servidorGui/)
+				Mensagen de retorno 
+					(Cloning into 'servidorGui'...
+					warning: You appear to have cloned an empty repository.
+					done.)
+
+			Caso queria vc pode adicionar um nome para o novo repositorio apenas colocando o nome na frente da barra como no exemplo a baixo
+				($  git clone /c/Users/guilh/Desktop/Projetos/GitTreinamento/servidorGui/Projeto)
+
+
+	
