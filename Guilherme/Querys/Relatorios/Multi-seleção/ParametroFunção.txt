@@ -1,0 +1,25 @@
+Deve ser usado a seguinten padrão para relatorio 
+[
+{   
+      "idscript" : "55",
+      "paramsScript" : "idcrm_funil", // recebe o valor do campo com :
+      "atributoAtualizar" : "cd_produto_ganho", // atributo que vai atualizar na tela 
+      "atributoIdOpcao" :"idcrm_produto", //  valor do select 
+      "atributoDescOpcao" : "ds_produto" //  descrição visivel para o usuario selecionar 
+}
+]
+
+outra forma de ser usado 
+
+[
+{   
+      "atributoChave" : "idcrm_lead", // serve como a condição where
+      "entidadeChave" : "crm_lead",  // serve como from     
+      "idscript" : "55",
+      "paramsScript" : "idcrm_funil", // recebe o valor do campo com :
+      "atributoAtualizar" : "cd_produto_ganho", // atributo que vai atualizar na tela 
+      "atributoIdOpcao" :"idcrm_produto", //  valor do select 
+      "atributoDescOpcao" : "ds_produto" //  descrição visivel para o usuario selecionar 
+}
+]
+
