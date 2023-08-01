@@ -1,0 +1,8 @@
+select * from api_log al
+  inner join api_token at2 on at2.idapi_token = al.idapi_token
+where
+--   at2.idpessoa_fisica in (1, 12525)
+  al.dt_insert BETWEEN '2023-07-25 11:16:19' and '2023-07-25 11:30:19'
+  and al.tipo = 'erro'
+--   and al.url = 'POST:/importacaoDados'
+order by al.idapi_log desc;
