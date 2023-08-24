@@ -1,12 +1,9 @@
 SELECT
-x.login,
 COUNT(x.QTd_Atendimento)as QTd_Atendimento,
 COUNT(DISTINCT x.idcontato_chatbot)as Qtd_Pessoa,
 ROUND(AVG(x.tempo_min_espera)) as tempo_min_espera,
 ROUND(AVG(x.tempo_min_atendimento))as tempo_min_atendimento
 FROM (SELECT
-    f_usuario_dados(idusuario,'NC')as login, 
-    ca.idusuario,
     (idchat_atendimento)as QTd_Atendimento,
     f_valor_iddominio(692, ie_tipo_encerramento)as ds_tipo_encerramento,
     TIMESTAMPDIFF(minute, dt_inicio, coalesce(dt_finalizacao, ca.dt_chamada))as tempo_min_espera,
@@ -21,8 +18,7 @@ from
     chat_atendimento ca
 where ca.idchatbot = :idchatbot
   and date(ca.dt_inicio) BETWEEN :dt_inicial AND :dt_final
-  and ca.idatendimento_chatbot_fila = :idatendimento_chatbot_fila
+  and (f_json_table(:idatendimento_chatbot_fila, ca.idatendimento_chatbot_fila) is not null or :idatendimento_chatbot_fila is null)
   and (f_json_table(:idusuario, ca.idusuario) is not null or :idusuario is null)
   and (f_json_table(:ie_tipo_encerramento, ca.ie_tipo_encerramento) is not null or :ie_tipo_encerramento is null)
-) x
-GROUP by x.login;
+) x;
