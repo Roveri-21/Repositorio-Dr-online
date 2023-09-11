@@ -33,5 +33,6 @@ WHERE
     cp.idestabelecimento = {{:idestabelecimento}}
     AND cf.idcrm_funil = :idcrm_funil
     AND cl.status = 'A'
+    AND cfe.ie_tipo_etapa = 'G'
     AND DATE(cl.dt_ganho) BETWEEN :dt_inicial AND :dt_final
     GROUP by cl.idcrm_origem_lead)x;

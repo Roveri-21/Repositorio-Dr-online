@@ -8,6 +8,7 @@ SELECT
     SUM(CASE WHEN DAYOFWEEK(cl.dt_ganho) = 6 THEN cl.ds_valor ELSE 0 END) AS Sexta,
     SUM(CASE WHEN DAYOFWEEK(cl.dt_ganho) = 7 THEN cl.ds_valor ELSE 0 END) AS Sabado,
     SUM(CASE WHEN DAYOFWEEK(cl.dt_ganho) = 1 THEN cl.ds_valor ELSE 0 END) AS Domingo,
+    sum(cl.ds_quantidade) as Qtd_itens,
     SUM(cl.ds_valor)as Total  
 FROM
     crm_lead cl
@@ -24,9 +25,10 @@ INNER JOIN pessoa_fisica pf ON
 INNER JOIN crm_origem_lead col ON 
     col.idcrm_origem_lead = cl.idcrm_origem_lead
 WHERE
-    cp.idestabelecimento = {{:idestabelecimento}}
+    cp.idestabelecimento = :idestabelecimento
     AND cf.idcrm_funil = :idcrm_funil
     AND cl.status = 'A'
+    AND cfe.ie_tipo_etapa = 'G'
     AND DATE(cl.dt_ganho) BETWEEN :dt_inicial AND :dt_final
 GROUP BY col.ds_origem
 ORDER BY Total DESC;
