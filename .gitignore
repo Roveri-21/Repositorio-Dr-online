@@ -2,7 +2,7 @@
 /cypress
 
 .dbeaver
-.project
+
 cypress.config.js
 package-lock.json
 package.json
