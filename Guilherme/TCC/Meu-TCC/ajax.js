@@ -1,6 +1,8 @@
 // Seleciona todos os links do menu
-var links = document.querySelectorAll('#menu a');
+var links = document.querySelectorAll("#menu a");
 
+//var links = document.querySelector('.menu');
+console.log(links.length)
 // Percorre todos os links do menu
 for (var i = 0; i < links.length; i++) {
   // Adiciona um evento de clique a cada link

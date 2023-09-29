@@ -1,3 +1,4 @@
+<!-- #include file = Login/Login_class.asp -->
 <!DOCTYPE html>
 <html lang='pt-br'>
    <head>
@@ -7,17 +8,17 @@
       <link rel=stylesheet href=Front.css>
       <script type=module src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script src="/javascript/Grafico_barra.js"></script>
-      <script src="/javascript/Grafico_rosquinha.js"></script>
-      <script src='./node_modules/chart.js/dist/Chart.js'></script> 
+      <script src="javascript/Grafico_barra.js"></script>
+      <script src="javascript/Grafico_rosquinha.js"></script>
+      <script src="./node_modules/chart.js/dist/Chart.js"></script> 
+      <script src="javascript/logout.js"></script>
+      
    </head>
    <body>
-      <header class="header">
-         <div class='menu'>
+         <div class="menu" id="menu">
             <!-- <img src="/imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo"> -->
             <!-- <img src="/imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo"> -->
-            <img src="/imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo">
-            
+            <img src="imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo">
             <ul>
                <li class='lista ativa'>
                   <a href='http://localhost/weblocal/TCC/Home.ASP'>
@@ -25,7 +26,7 @@
                         <ion-icon name='paw-outline'></ion-icon>
                      </span>
                      <span class='lista'>Home</span>
-                  <a>
+                  </a>
                </li>
             </ul>
             <ul>
@@ -33,7 +34,7 @@
                   <a href='#' class='transacao'>
                      <span class='icone'><ion-icon name='cash-outline'></ion-icon></span>
                      <span class='lista'>Transações</span>
-                  <a>
+                  </a>
                   <ul class='Itens_transacao'>
                      <li><a href='#' class='pix'>Pix</a></li>
                      <li><a href='#' class='dinheiro'>Dinheiro</a></li>
@@ -43,13 +44,13 @@
             </ul>
             <ul>
                <li class='lista'>
-                  <a href='' onclick='abrirPag(Estoque)'>
+                  <a href='Estoque.html'>
                      <span class='icone'>
                         <ion-icon name='cube-outline'></ion-icon>
                         </ion-icon>
                      </span>
                      <span class='lista'>Estoque</span>
-                  <a>
+                  </a>
                </li>
             </ul>
             <ul>
@@ -60,7 +61,7 @@
                         </ion-icon>
                      </span>
                      <span class='lista'>Admin</span>
-                  <a>
+                  </a>
                </li>
             </ul>
             <ul>
@@ -71,7 +72,7 @@
                         </ion-icon>
                      </span>
                      <span class='lista'>Logs</span>
-                  <a>
+                  </a>
                </li>
             </ul>
             <ul>
@@ -81,23 +82,24 @@
                         <ion-icon name='settings-outline'></ion-icon>
                      </span>
                      <span class='lista'>Configurações</span>
-                  <a>
+                  </a>
                </li>
             </ul>
-            <ul>
-               <li class='lista'>
-                  <a href='Login/Login.asp'>
-                     <span class='icone'>
+               <ul>
+                  <li class='lista'>
+                     <a href='Login/Login.asp' id='logout-link'>
+                        <span class='icone'>
                         <ion-icon name='log-out-outline'></ion-icon>
-                     </span>
-                     <span class='lista'>Sair</span>
-                  <a>
-               </li>
-            </ul>
+                        </span>
+                        <span class='lista'>Sair</span>
+                     </a>
+                  </li>
+               </ul>
          </div>
-      </header>
-      <main class="main-content">
-         <div class='conteudo'>
+      
+
+      <main class="main-content" id="main-content">
+         <div class="conteudo" id="conteudo" >
             <section class="personal-data">
                <fieldset>
                   <legend>Dados Pessoais</legend>
@@ -159,5 +161,6 @@
             </section>
          </div>
       </main>
+      <script src="ajax.js"></script>
    </body>
 </html>
