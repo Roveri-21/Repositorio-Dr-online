@@ -1,48 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        
-    </head>
-         <body>
-         <div class="conteudo" id="conteudo">
-                    <table>
-                        <thead>
-                            <th>Produto id</th>
-                            <th>Nome Produto</th>
-                            <th>Quantidade</th>
-                            <th>Valor Produto</th>
-                            <th>Descrição Produto</th>
-                            <th>Data vencimento</th>
-                            <th>Valor do Estoque</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>pdid1</td>
-                            </tr>
-                            <tr>
-                                <td>pdid2</td>
-                            </tr>
-                            <tr>
-                                <td>pdid3</td>
-                            </tr>
-                            <tr>
-                                <td>pdid4</td>
-                            </tr>
-                            <tr>
-                                <td>pdid5</td>
-                            </tr>
-                            <tr>
-                                <td>pdid6</td>
-                            </tr>
-                            <tr>
-                                <td>pdid7</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </body>
-            <script src="ajax.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <style>
+        /* Estilos para separar visualmente os campos de filtro da tabela */
+        hr {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+
+    <!-- Filtros -->
+    <h2>Filtrar Produtos</h2>
+    <label for="filtroProdutoId">Produto ID:</label>
+    <input type="text" id="filtroProdutoId" placeholder="Filtrar por Produto ID">
+    <label for="filtroNomeProduto">Nome Produto:</label>
+    <input type="text" id="filtroNomeProduto" placeholder="Filtrar por Nome Produto">
+    <label for="filtroQuantidade">Quantidade:</label>
+    <input type="text" id="filtroQuantidade" placeholder="Filtrar por Quantidade">
+    <label for="filtroValorProduto">Valor Produto:</label>
+    <input type="text" id="filtroValorProduto" placeholder="Filtrar por Valor Produto">
+    <label for="filtroDescricaoProduto">Descrição Produto:</label>
+    <input type="text" id="filtroDescricaoProduto" placeholder="Filtrar por Descrição Produto">
+    <label for="filtroDataVencimento">Data de Vencimento:</label>
+    <input type="text" id="filtroDataVencimento" placeholder="Filtrar por Data de Vencimento">
+    <label for="filtroValorEstoque">Valor do Estoque:</label>
+    <input type="text" id="filtroValorEstoque" placeholder="Filtrar por Valor do Estoque">
+
+    <hr> <!-- Linha de separação visual -->
+
+    <!-- Adicionar Produto -->
+    <h2>Adicionar Produto</h2>
+    <label for="produtoId">Produto ID:</label>
+    <input type="text" id="produtoId" placeholder="Produto ID">
+    <label for="nomeProduto">Nome Produto:</label>
+    <input type="text" id="nomeProduto" placeholder="Nome Produto">
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade" placeholder="Quantidade">
+    <label for="valorProduto">Valor Produto:</label>
+    <input type="text" id="valorProduto" placeholder="Valor Produto">
+    <label for="descricaoProduto">Descrição Produto:</label>
+    <input type="text" id="descricaoProduto" placeholder="Descrição Produto">
+    <label for="dataVencimento">Data de Vencimento:</label>
+    <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
+    <label for="valorEstoque">Valor do Estoque:</label>
+    <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
+    <button onclick="adicionarProduto()">Adicionar Produto</button>
+
+    <!-- Tabela de estoque -->
+    <h2>Lista de Produtos</h2>
+    <table id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Produto id</th>
+                <th>Nome Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Produto</th>
+                <th>Descrição Produto</th>
+                <th>Data vencimento</th>
+                <th>Valor do Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+        </tbody>
+    </table>
+
+    <script>
+        // Funções JavaScript aqui
+    </script>
+</body>
 </html>
+
+
+
+        <script src="ajax.js"></script>
+        <script src="filtros.js"></script>
+
+        

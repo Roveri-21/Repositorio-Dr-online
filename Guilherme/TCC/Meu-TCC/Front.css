@@ -84,9 +84,48 @@
   position: absolute;
   right: 0;
   background: #ffffff;
-  box-shadow: 0 0 0px rgba(243, 4, 4, 0.2);
-   
+  box-shadow: 0 0 0px rgba(243, 4, 4, 0.2);  
 }
+.conteudo .elemento-estilizado {
+  width: calc(100% - 150px);
+  height: 95%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top:3%;
+  position: absolute;  
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius:1%;
+}
+/* Estilos para a aba */
+.aba {
+  position: absolute;
+  top: -30px; /* Ajuste a posição vertical conforme necessário para alinhar com o topo do fieldset */
+  left: 0px; /* Ajuste a posição horizontal conforme necessário */
+  background-color: #e18739;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Garante que a aba esteja na frente de outros elementos */
+}
+
+/* Estilos para a aba quando o mouse passa por cima */
+.aba:hover {
+  background-color: #ff9933; /* Cor de fundo diferente ao passar o mouse */
+}
+
+/* Estilos para o fieldset */
+fieldset {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 30px; /* Certifique-se de deixar espaço suficiente para a aba acima */
+  position: relative; /* Permitir que a aba fique acima do fieldset */
+}
+
+
 .conteudo section{
   flex-direction: column;
   
@@ -104,39 +143,14 @@
   padding: 10px;
   display: flex;  
 }
-/* .GraficoBarra{
-  flex: 0 0 calc(30% - 10px);
-  margin-bottom: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-}
-.GraficoRosquinha{
-  flex: 0 0 calc(30% - 10px);
-  margin-bottom: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-}
-.graficos{
-  display: flex;
-  flex-wrap: wrap;
-} */
 
 .main-content {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
-
-.personal-data {
-  margin-bottom: 20px;
-  /* Estilos para a seção de dados pessoais */
-}
-
 .data-table {
   margin-bottom: 20px;
   /* Estilos para a seção da tabela de dados */
 }
+
