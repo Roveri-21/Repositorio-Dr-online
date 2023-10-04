@@ -43,7 +43,7 @@ hr {
   input[type="text"],
   input[type="number"],
   input[type="date"] {
-    width: 20%; /* Defina a largura desejada para os campos de filtro */
+    width: 10%; /* Defina a largura desejada para os campos de filtro */
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -91,59 +91,34 @@ hr {
     </style>
 </head>
 <body>
-    <h1>Estoque</h1>
+    <h1>Logs</h1>
     <fieldset>
-        <h3>Filtrar por Produtos</h2>
         <label for="filtroProdutoId">Produto ID:</label>
-        <input type="text" id="filtroProdutoId" placeholder="Filtrar por Produto ID">
+        <input type="text" id="filtroProdutoId" placeholder="Produto ID">
         <label for="filtroNomeProduto">Nome Produto:</label>
-        <input type="text" id="filtroNomeProduto" placeholder="Filtrar por Nome Produto">
+        <input type="text" id="filtroNomeProduto" placeholder="Nome Produto">
         <label for="filtroQuantidade">Quantidade:</label>
-        <input type="text" id="filtroQuantidade" placeholder="Filtrar por Quantidade">
+        <input type="text" id="filtroQuantidade" placeholder="Quantidade">
         <label for="filtroValorProduto">Valor Produto:</label>
-        <input type="text" id="filtroValorProduto" placeholder="Filtrar por Valor Produto">
+        <input type="text" id="filtroValorProduto" placeholder="Valor Produto">
         <label for="filtroDescricaoProduto">Descrição Produto:</label>
-        <input type="text" id="filtroDescricaoProduto" placeholder="Filtrar por Descrição Produto">
+        <input type="text" id="filtroDescricaoProduto" placeholder="Descrição Produto">
         <label for="filtroDataVencimento">Data de Vencimento:</label>
-        <input type="text" id="filtroDataVencimento" placeholder="Filtrar por Data de Vencimento">
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
         <label for="filtroValorEstoque">Valor do Estoque:</label>
-        <input type="text" id="filtroValorEstoque" placeholder="Filtrar por Valor do Estoque">
+        <input type="text" id="filtroValorEstoque" placeholder="Valor do Estoque">
         <button id="filtrobutton" class="filtrobutton">Filtrar</button>
-        <button id="mostrarFormulario">Novo Produto</button>
     </fieldset>
-    
-
-    <!-- Adicionar Produto -->
-    <fieldset id="formularioAdicionar">
-        <h2>Adicionar Produto</h2>
-        <label for="produtoId">Produto ID:</label>
-        <input type="text" id="produtoId" placeholder="Produto ID">
-        <label for="nomeProduto">Nome Produto:</label>
-        <input type="text" id="nomeProduto" placeholder="Nome Produto">
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" placeholder="Quantidade">
-        <label for="valorProduto">Valor Produto:</label>
-        <input type="text" id="valorProduto" placeholder="Valor Produto">
-        <label for="descricaoProduto">Descrição Produto:</label>
-        <input type="text" id="descricaoProduto" placeholder="Descrição Produto">
-        <label for="dataVencimento">Data de Vencimento:</label>
-        <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
-        <label for="valorEstoque">Valor do Estoque:</label>
-        <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
-        <button id="buttonAdicionar" onclick="toggleFormulario()">Enviar</button>
-    </fieldset>
-    <!-- Tabela de estoque -->
-    <h2>Produtos</h2>
+    <!-- Tabela de Logs -->
+    <h2>Ultimos logs</h2>
     <table id="tabelaProdutos">
         <thead>
             <tr>
-                <th>Produto id</th>
-                <th>Nome Produto</th>
-                <th>Quantidade</th>
-                <th>Valor Produto</th>
-                <th>Descrição Produto</th>
-                <th>Data vencimento</th>
-                <th>Valor do Estoque</th>
+                <th>Usuaio</th>
+                <th>id alteração</th>
+                <th>Descrição atualizaçõa</th>
+                <th>Data atualizaçõa</th>
+                <th>Ultima atualizaçõa</th>
             </tr>
         </thead>
         <tbody>

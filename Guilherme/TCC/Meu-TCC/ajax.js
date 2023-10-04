@@ -1,5 +1,6 @@
 function toggleFormulario() {
-  const formularioAdicionar = document.getElementById("formularioAdicionar");
+  console.log(document);
+  const formularioAdicionar = document.querySelector("#formularioAdicionar");
 console.log(formularioAdicionar)
   if (formularioAdicionar.style.display === "none" || formularioAdicionar.style.display === "") {
       formularioAdicionar.style.display = "block";
@@ -7,11 +8,15 @@ console.log(formularioAdicionar)
       formularioAdicionar.style.display = "none";
   }
 }
+
+
 var links = document.querySelectorAll("#menu a");
+
 for (var i = 0; i < links.length; i++) {
   links[i].addEventListener('click', function(e) {
 console.log('gggggggggggggg',e.target.tagName);
 let tag = e.target;
+
 if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
   tag = e.target.parentElement;
 }
@@ -28,9 +33,14 @@ if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
       xhr.onload = function() {
         // Atualiza o conteúdo da página com o novo conteúdo
         document.querySelector('#conteudo').innerHTML = xhr.responseText;
+
+        const x = document.querySelector('#mostrarFormulario');
+
+        console.log(x);
+        x.addEventListener('click', toggleFormulario);
       };
       xhr.send();
-      toggleFormulario();
+     // toggleFormulario();
     }
   });
 }
