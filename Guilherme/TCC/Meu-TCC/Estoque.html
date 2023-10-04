@@ -5,54 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
     <style>
-        /* Estilos para separar visualmente os campos de filtro da tabela */
-        hr {
-            border: 1px solid #ccc;
-        }
+        
+hr {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para a tabela de estoque */
+  #tabelaProdutos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #tabelaProdutos th, #tabelaProdutos td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+  }
+  
+  #tabelaProdutos th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para os campos de filtro e adição de produtos */
+  h2 {
+    margin-top: 20px;
+  }
+  
+  label {
+    
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para os campos de filtro */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 20%; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Alinhe os campos de filtro na mesma linha */
+  .filtro {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }  
+  button:hover {
+    background-color:grey;
+  }
+  .filtrobutton{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  #formularioAdicionar {
+    display: none;
+}
+
+/* Estilo para o botão "Adicionar Novo Produto" */
+#mostrarFormulario {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#mostrarFormulario:hover {
+    background-color: grey;
+}  
     </style>
 </head>
 <body>
-    <h1>Controle de Estoque</h1>
-
-    <!-- Filtros -->
-    <h2>Filtrar Produtos</h2>
-    <label for="filtroProdutoId">Produto ID:</label>
-    <input type="text" id="filtroProdutoId" placeholder="Filtrar por Produto ID">
-    <label for="filtroNomeProduto">Nome Produto:</label>
-    <input type="text" id="filtroNomeProduto" placeholder="Filtrar por Nome Produto">
-    <label for="filtroQuantidade">Quantidade:</label>
-    <input type="text" id="filtroQuantidade" placeholder="Filtrar por Quantidade">
-    <label for="filtroValorProduto">Valor Produto:</label>
-    <input type="text" id="filtroValorProduto" placeholder="Filtrar por Valor Produto">
-    <label for="filtroDescricaoProduto">Descrição Produto:</label>
-    <input type="text" id="filtroDescricaoProduto" placeholder="Filtrar por Descrição Produto">
-    <label for="filtroDataVencimento">Data de Vencimento:</label>
-    <input type="text" id="filtroDataVencimento" placeholder="Filtrar por Data de Vencimento">
-    <label for="filtroValorEstoque">Valor do Estoque:</label>
-    <input type="text" id="filtroValorEstoque" placeholder="Filtrar por Valor do Estoque">
-
-    <hr> <!-- Linha de separação visual -->
+    <h1>Estoque</h1>
+    <fieldset>
+        <h3>Filtrar por Produtos</h2>
+        <label for="filtroProdutoId">Produto ID:</label>
+        <input type="text" id="filtroProdutoId" placeholder="Filtrar por Produto ID">
+        <label for="filtroNomeProduto">Nome Produto:</label>
+        <input type="text" id="filtroNomeProduto" placeholder="Filtrar por Nome Produto">
+        <label for="filtroQuantidade">Quantidade:</label>
+        <input type="text" id="filtroQuantidade" placeholder="Filtrar por Quantidade">
+        <label for="filtroValorProduto">Valor Produto:</label>
+        <input type="text" id="filtroValorProduto" placeholder="Filtrar por Valor Produto">
+        <label for="filtroDescricaoProduto">Descrição Produto:</label>
+        <input type="text" id="filtroDescricaoProduto" placeholder="Filtrar por Descrição Produto">
+        <label for="filtroDataVencimento">Data de Vencimento:</label>
+        <input type="text" id="filtroDataVencimento" placeholder="Filtrar por Data de Vencimento">
+        <label for="filtroValorEstoque">Valor do Estoque:</label>
+        <input type="text" id="filtroValorEstoque" placeholder="Filtrar por Valor do Estoque">
+        <button id="filtrobutton" class="filtrobutton">Filtrar</button>
+        <button id="mostrarFormulario">Novo Produto</button>
+    </fieldset>
+    
 
     <!-- Adicionar Produto -->
-    <h2>Adicionar Produto</h2>
-    <label for="produtoId">Produto ID:</label>
-    <input type="text" id="produtoId" placeholder="Produto ID">
-    <label for="nomeProduto">Nome Produto:</label>
-    <input type="text" id="nomeProduto" placeholder="Nome Produto">
-    <label for="quantidade">Quantidade:</label>
-    <input type="number" id="quantidade" placeholder="Quantidade">
-    <label for="valorProduto">Valor Produto:</label>
-    <input type="text" id="valorProduto" placeholder="Valor Produto">
-    <label for="descricaoProduto">Descrição Produto:</label>
-    <input type="text" id="descricaoProduto" placeholder="Descrição Produto">
-    <label for="dataVencimento">Data de Vencimento:</label>
-    <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
-    <label for="valorEstoque">Valor do Estoque:</label>
-    <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
-    <button onclick="adicionarProduto()">Adicionar Produto</button>
-
+    <fieldset id="formularioAdicionar">
+        <h2>Adicionar Produto</h2>
+        <label for="produtoId">Produto ID:</label>
+        <input type="text" id="produtoId" placeholder="Produto ID">
+        <label for="nomeProduto">Nome Produto:</label>
+        <input type="text" id="nomeProduto" placeholder="Nome Produto">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" placeholder="Quantidade">
+        <label for="valorProduto">Valor Produto:</label>
+        <input type="text" id="valorProduto" placeholder="Valor Produto">
+        <label for="descricaoProduto">Descrição Produto:</label>
+        <input type="text" id="descricaoProduto" placeholder="Descrição Produto">
+        <label for="dataVencimento">Data de Vencimento:</label>
+        <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
+        <label for="valorEstoque">Valor do Estoque:</label>
+        <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
+        <button onclick="adicionarProduto()">Enviar</button>
+    </fieldset>
     <!-- Tabela de estoque -->
-    <h2>Lista de Produtos</h2>
+    <h2>Produtos</h2>
     <table id="tabelaProdutos">
         <thead>
             <tr>
@@ -75,10 +156,10 @@
     </script>
 </body>
 </html>
-
-
-
+        
         <script src="ajax.js"></script>
-        <script src="filtros.js"></script>
-
+        
+        
+        
+        
         

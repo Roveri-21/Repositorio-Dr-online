@@ -1,14 +1,16 @@
-// Seleciona todos os links do menu
+function toggleFormulario() {
+  const formularioAdicionar = document.getElementById("formularioAdicionar");
+console.log(formularioAdicionar)
+  if (formularioAdicionar.style.display === "none" || formularioAdicionar.style.display === "") {
+      formularioAdicionar.style.display = "block";
+  } else {
+      formularioAdicionar.style.display = "none";
+  }
+}
 var links = document.querySelectorAll("#menu a");
-
-//var links = document.querySelector('.menu');
-console.log(links.length)
-// Percorre todos os links do menu
 for (var i = 0; i < links.length; i++) {
-  // Adiciona um evento de clique a cada link
   links[i].addEventListener('click', function(e) {
 console.log('gggggggggggggg',e.target.tagName);
-
 let tag = e.target;
 if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
   tag = e.target.parentElement;
@@ -28,6 +30,10 @@ if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
         document.querySelector('#conteudo').innerHTML = xhr.responseText;
       };
       xhr.send();
+      toggleFormulario();
     }
   });
 }
+
+
+
