@@ -162,7 +162,7 @@ fieldset legend {
   font-weight: bold;
 }
 button {
-  background-color: #4CAF50;
+  background-color: blue;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -171,12 +171,31 @@ button {
 button:hover {
   background-color:grey;
 }
+input[type="date"] {
+  width: 110px; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
 /* Estilos para os campos de filtro */
 input[type="text"],
-input[type="number"],
-input[type="date"] {
+input[type="number"]{
   width: 20%; /* Defina a largura desejada para os campos de filtro */
   padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
+}
+#tabelaProdutos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabelaProdutos th, #tabelaProdutos td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+#tabelaProdutos th {
+  background-color: #f2f2f2;
 }
