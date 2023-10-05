@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewt" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
     <style>
         
@@ -38,11 +38,14 @@ hr {
     font-weight: bold;
     margin-top: 10px;
   }
-  
+  input[type="date"]{
+    width: 110px; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
   /* Estilos para os campos de filtro */
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
+  input[type="text"]{
     width: 20%; /* Defina a largura desejada para os campos de filtro */
     padding: 5px;
     margin-bottom: 10px;
@@ -88,36 +91,51 @@ hr {
 #mostrarFormulario:hover {
     background-color: grey;
 }  
+.buttonAdicionarRemover{
+  background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+
+}
+#filtroProdutoId{
+  width: 150px; /* Defina a largura desejada para os campos de filtro */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
     </style>
 </head>
 <body>
     <h1>Estoque</h1>
     <fieldset>
-        <h3>Filtrar por Produtos</h2>
         <label for="filtroProdutoId">Produto ID:</label>
-        <input type="text" id="filtroProdutoId" placeholder="Filtrar por Produto ID">
+        <input type="text" id="filtroProdutoId" placeholder="Produto ID">
         <label for="filtroNomeProduto">Nome Produto:</label>
-        <input type="text" id="filtroNomeProduto" placeholder="Filtrar por Nome Produto">
+        <input type="text" id="filtroNomeProduto" placeholder="Nome Produto">
         <label for="filtroQuantidade">Quantidade:</label>
-        <input type="text" id="filtroQuantidade" placeholder="Filtrar por Quantidade">
+        <input type="text" id="filtroQuantidade" placeholder="Quantidade">
         <label for="filtroValorProduto">Valor Produto:</label>
-        <input type="text" id="filtroValorProduto" placeholder="Filtrar por Valor Produto">
+        <input type="text" id="filtroValorProduto" placeholder="Valor Produto">
         <label for="filtroDescricaoProduto">Descrição Produto:</label>
-        <input type="text" id="filtroDescricaoProduto" placeholder="Filtrar por Descrição Produto">
+        <input type="text" id="filtroDescricaoProduto" placeholder="Descrição Produto">
         <label for="filtroDataVencimento">Data de Vencimento:</label>
-        <input type="text" id="filtroDataVencimento" placeholder="Filtrar por Data de Vencimento">
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
+        <label for="filtroDataVencimento">Data Criação:</label>
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
         <label for="filtroValorEstoque">Valor do Estoque:</label>
-        <input type="text" id="filtroValorEstoque" placeholder="Filtrar por Valor do Estoque">
-        <button id="filtrobutton" class="filtrobutton">Filtrar</button>
-        <button id="mostrarFormulario">Novo Produto</button>
+        <input type="text" id="filtroValorEstoque" placeholder="Valor do Estoque">
+        <button id="filtrobutton" class="filtrobutton">Buscar</button>
+        <button id="mostrarFormulario">Novo</button>
+        <button id="buttonAdicionarRemover" class="buttonAdicionarRemover">Remover</button>
     </fieldset>
     
 
     <!-- Adicionar Produto -->
     <fieldset id="formularioAdicionar">
-        <h2>Adicionar Produto</h2>
-        <label for="produtoId">Produto ID:</label>
-        <input type="text" id="produtoId" placeholder="Produto ID">
+        <h2>Novo Produto</h2>
         <label for="nomeProduto">Nome Produto:</label>
         <input type="text" id="nomeProduto" placeholder="Nome Produto">
         <label for="quantidade">Quantidade:</label>
@@ -130,7 +148,7 @@ hr {
         <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
         <label for="valorEstoque">Valor do Estoque:</label>
         <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
-        <button id="buttonAdicionar" onclick="toggleFormulario()">Enviar</button>
+        <button id="buttonAdicionar">Criar</button>
     </fieldset>
     <!-- Tabela de estoque -->
     <h2>Produtos</h2>

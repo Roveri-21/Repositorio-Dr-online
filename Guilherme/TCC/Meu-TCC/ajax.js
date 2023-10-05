@@ -9,12 +9,10 @@ console.log(formularioAdicionar)
   }
 }
 
-
 var links = document.querySelectorAll("#menu a");
-
 for (var i = 0; i < links.length; i++) {
   links[i].addEventListener('click', function(e) {
-console.log('gggggggggggggg',e.target.tagName);
+
 let tag = e.target;
 
 if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
@@ -36,7 +34,7 @@ if (['ION-ICON','SPAN' ].includes(tag.tagName)) {
 
         const x = document.querySelector('#mostrarFormulario');
 
-        console.log(x);
+        
         x.addEventListener('click', toggleFormulario);
       };
       xhr.send();
