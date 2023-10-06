@@ -106,6 +106,25 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
+.pagination-buttons {
+            float: right;
+            margin-top: 10px;
+        }
+  /* Estilo para o botão de páginação */
+  .pagination-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+
+        /* Estilo de hover para o botão de páginação */
+        .pagination-button:hover {
+            background-color: #0056b3;
+        }
   
     </style>
 </head>
@@ -123,7 +142,7 @@
         <label for="filtroDataVencimento">Data Venda:</label>
         <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
         <button id="filtrobutton" class="filtrobutton">Buscar</button>
-        <button id="mostrarFormulario">Novo</button>
+        <button id="mostrarFormulario" class="novo">Novo</button>
         <button id="buttonAdicionarRemover" class="buttonAdicionarRemover">Remover</button>
     </fieldset>
     
@@ -157,9 +176,36 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+              <tr>
+                <td>021</td>
+                <td>Maguns</td>
+                <td>Saco 10kg</td>
+                <td>R$150,00</td>
+                <td>Um saco de 10 kg, pagamento a vista no dinheiro</td>
+                <td>25/09/2023</td>
+             </tr>
+             <tr>
+              <td>045</td>
+              <td>Capitão dog</td>
+              <td>Saco 5kg</td>
+              <td>R$75,00</td>
+              <td>Um saco de 5 kg, pagamento à vista no pix</td>
+              <td>30/09/2023</td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>Special dog</td>
+              <td>Saco 20kg</td>
+              <td>R$250,00</td>
+              <td>Um saco de 20 kg, pagamento à vista em dinheiro</td>
+              <td>20/09/2023</td>
+            </tr>                    
             </tbody>
         </table>
+        <button class="pagination-button">50</button>
+        <button class="pagination-button">100</button>
+        <button class="pagination-button">150</button>
+        <button class="pagination-button">...</button>
     </div>
     <script>
         function formatarValorParaMoeda(valor) {
@@ -173,5 +219,6 @@
             document.getElementById("saldo").textContent = `Saldo Atual: ${formatarValorParaMoeda(saldoAtual)}`;
         }
     </script>
+    
 </body>
 </html>

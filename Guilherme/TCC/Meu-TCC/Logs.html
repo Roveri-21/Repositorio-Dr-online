@@ -87,7 +87,26 @@ hr {
 
 #mostrarFormulario:hover {
     background-color: grey;
-}  
+}
+.pagination-buttons {
+            float: right;
+            margin-top: 10px;
+        }
+  /* Estilo para o botão de páginação */
+  .pagination-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+
+        /* Estilo de hover para o botão de páginação */
+        .pagination-button:hover {
+            background-color: #0056b3;
+        }  
     </style>
 </head>
 <body>
@@ -122,10 +141,82 @@ hr {
             </tr>
         </thead>
         <tbody>
-            <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+          <tr>
+            <td>user123</td>
+            <td>001</td>
+            <td>Atualização de endereço</td>
+            <td>10/10/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>jane_doe</td>
+            <td>002</td>
+            <td>Adição de novo produto</td>
+            <td>15/10/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>john_smith</td>
+            <td>003</td>
+            <td>Alteração de preço</td>
+            <td>20/10/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>user456</td>
+            <td>004</td>
+            <td>Atualização de estoque</td>
+            <td>25/10/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>alice_jones</td>
+            <td>005</td>
+            <td>Correção de erros</td>
+            <td>30/10/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>mark_jackson</td>
+            <td>006</td>
+            <td>Atualização de imagens</td>
+            <td>05/11/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>susan_smith</td>
+            <td>007</td>
+            <td>Alteração de descrição</td>
+            <td>10/11/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>user789</td>
+            <td>008</td>
+            <td>Adição de novas categorias</td>
+            <td>15/11/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>david_wilson</td>
+            <td>009</td>
+            <td>Atualização de links</td>
+            <td>20/11/2023</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>emily_adams</td>
+            <td>010</td>
+            <td>Correção de formatação</td>
+            <td>25/11/2023</td>
+            <td>Sim</td>
+        </tr>        
         </tbody>
     </table>
-
+    <button class="pagination-button">50</button>
+    <button class="pagination-button">100</button>
+    <button class="pagination-button">150</button>
+    <button class="pagination-button">...</button>
     <script>
         // Funções JavaScript aqui
     </script>

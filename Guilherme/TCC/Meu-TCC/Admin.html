@@ -107,6 +107,25 @@ hr {
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
+.pagination-buttons {
+            float: right;
+            margin-top: 10px;
+        }
+  /* Estilo para o botão de páginação */
+  .pagination-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+
+        /* Estilo de hover para o botão de páginação */
+        .pagination-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -153,10 +172,47 @@ hr {
         </tr>
     </thead>
     <tbody>
-        <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+      <tr>
+        <td>001</td>
+        <td>João Silva</td>
+        <td>31/12/2023</td>
+        <td>15/09/2023</td>
+        <td>Ativo</td>
+    </tr>
+    <tr>
+        <td>002</td>
+        <td>Maria Santos</td>
+        <td>30/11/2023</td>
+        <td>10/08/2023</td>
+        <td>Ativo</td>
+    </tr>
+    <tr>
+        <td>003</td>
+        <td>Carlos Oliveira</td>
+        <td>15/11/2023</td>
+        <td>05/07/2023</td>
+        <td>Inativo</td>
+    </tr>
+    <tr>
+        <td>004</td>
+        <td>Ana Pereira</td>
+        <td>20/12/2023</td>
+        <td>20/06/2023</td>
+        <td>Ativo</td>
+    </tr>
+    <tr>
+        <td>005</td>
+        <td>Marcos Ferreira</td>
+        <td>28/02/2024</td>
+        <td>30/05/2023</td>
+        <td>Ativo</td>
+    </tr>    
     </tbody>
 </table>
-
+<button class="pagination-button">50</button>
+<button class="pagination-button">100</button>
+<button class="pagination-button">150</button>
+<button class="pagination-button">...</button>
 <script>
     // Funções JavaScript aqui
 </script>
