@@ -92,10 +92,14 @@
                <section class="personal-data">
                   <fieldset id="formularioAdicionar">
                      <legend>Pesquisa</legend>
+                     <label for="nomeVendedor">Nome Vendedor:</label>
+                     <input type="text" id="nomeVendedor" placeholder="Nome Vendedor">
                      <label for="nomeProduto">Nome Produto:</label>
                      <input type="text" id="nomeProduto" placeholder="Nome Produto">
                      <label for="valorProduto">Valor Produto:</label>
                      <input type="text" id="valorProduto" placeholder="Valor Produto">
+                     <label for="CPF">CPF:</label>
+                     <input type="text" id="CPF" placeholder="CPF do vendedor">
                      <label for="dataVencimento">Data de Vencimento:</label>
                      <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
                      <button id="buttonAdicionar">Buscar</button>
@@ -108,30 +112,48 @@
                         <table id="tabelaProdutos" class="tabelaProdutos">
                            <thead>
                               <tr>
-                                 <th>Nome</th>
-                                 <th>Data de Nascimento</th>
+                                 <th>Nome Vendedor</th>
+                                 <th>Data Vencimento</th>
                                  <th>CPF</th>
+                                 <th>Nome do Produto</th>
                                  <th>Valor Produto</th>
                               </tr>
                            </thead>
                            <tbody>
                               <tr>
                                  <td>Carlos Oliveira</td>
-                                 <td>20/12/1982</td>
+                                 <td>20/12/2023</td>
                                  <td>111.222.333-44</td>
+                                 <td>Captão dog</td>
                                  <td>R$500,00</td>
                               </tr>
                               <tr>
                                  <td>Maria Souza</td>
-                                 <td>10/05/1985</td>
+                                 <td>10/05/2023</td>
                                  <td>987.654.321-11</td>
+                                 <td>Magnus</td>
                                  <td>R$400,00</td>
                               </tr>
                               <tr>
                                  <td>João Silva</td>
-                                 <td>01/01/1990</td>
-                                 <td>123.456.789-00</td>
+                                 <td>01/01/2023</td>
+                                 <td>444.756.789-12</td>
+                                 <td>Special dog</td>
                                  <td>R$200,00</td>
+                              </tr>
+                              <tr>
+                                 <td>Guilherme Silva</td>
+                                 <td>01/05/2023</td>
+                                 <td>333.466.789-46</td>
+                                 <td>Special dog</td>
+                                 <td>R$150,00</td>
+                              </tr>
+                              <tr>
+                                 <td>Gabriel Silva</td>
+                                 <td>01/12/2023</td>
+                                 <td>222.456.789-02</td>
+                                 <td>Special dog</td>
+                                 <td>R$100,00</td>
                               </tr>
                            </tbody>
                         </table>

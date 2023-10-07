@@ -125,6 +125,12 @@
         .pagination-button:hover {
             background-color: #0056b3;
         }
+        .pagammento{
+          width: 100px; /* Defina a largura desejada para os campos de filtro */
+          padding: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+        }
   
     </style>
 </head>
@@ -158,7 +164,14 @@
         <input type="number" id="quantidade" placeholder="Quantidade">
         <label for="valorProduto">Valor Produto:</label>
         <input type="text" id="valorProduto" placeholder="Valor Produto">
-        <button id="buttonAdicionar">Novo</button>
+        <label for="pagammento">Forma de pagamento:</label>
+        <select name="pagammento" id="pagammento" class="pagammento">
+          <option value="">Pix</option>
+          <option value="">Cartão</option>
+          <option value="">Dinheiro</option>
+          <option value="">Outros</option>
+        </select>
+        <button id="buttonAdicionar">Criar</button>
     </fieldset>
     <div>
         <h3></h3>
