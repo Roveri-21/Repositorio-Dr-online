@@ -98,5 +98,4 @@ Git
 			Caso queria vc pode adicionar um nome para o novo repositorio apenas colocando o nome na frente da barra como no exemplo a baixo
 				($  git clone /c/Users/guilh/Desktop/Projetos/GitTreinamento/servidorGui/Projeto)
 
-
-	
+			para fazer o git iguinorar um arquivo crie o arquivo da seguinte forma (.gitignore)
