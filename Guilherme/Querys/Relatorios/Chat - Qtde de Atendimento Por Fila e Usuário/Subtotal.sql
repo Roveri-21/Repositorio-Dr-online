@@ -49,5 +49,6 @@ where ca.idchatbot = :idchatbot
   and ca.idusuario is not null
 ) x
 where  (f_json_table(:idusuario, x.idusuario) is not null or :idusuario is null) 
+    and (f_json_table(:idatendimento_chatbot_fila, x.idatendimento_chatbot_fila) or :idatendimento_chatbot_fila is null)
     and (f_json_table(:ie_tipo_encerramento, x.ie_tipo_encerramento) is not null or :ie_tipo_encerramento is null)
     and date(x.dt_inicio) BETWEEN :dt_inicial AND :dt_final;
