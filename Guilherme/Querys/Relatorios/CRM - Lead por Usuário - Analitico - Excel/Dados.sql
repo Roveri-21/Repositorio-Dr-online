@@ -51,7 +51,7 @@ order by cl.login, cl.nr_seq_apresent;
 
 
 
-//teste
+//versão atual
 
 select
     cl.idcrm_lead,
@@ -83,24 +83,14 @@ left join crm_pessoa cp on cp.idcrm_pessoa = cl.idcrm_pessoa
 left join crm_pessoa_contato cpc on cpc.idcrm_pessoa = cp.idcrm_pessoa 
   and cpc.ie_principal = 'S'
 left join crm_empresa ce on ce.idcrm_empresa = cl.idcrm_empresa 
-left join crm_empresa_contato cec on cec.idcrm_empresa = cl.idcrm_empresa 
-/*left join estabelecimento e on e.idestabelecimento =cp2.idestabelecimento
-left join crm_equipe ce2 on ce2.idestabelecimento = e.idestabelecimento*/ 
-  and cec.ie_principal = 'S'
+left join crm_empresa_contato cec on cec.idcrm_empresa = cl.idcrm_empresa  
+and cec.ie_principal = 'S'
 where DATE_FORMAT(cl.dt_insert,'%Y-%m-%d') between :dt_inicial and :dt_final
-and cp2.idestabelecimento = :idestabelecimento
--- and cl.idcrm_lead = 465991
--- and ce2.idcrm_equipe = :idcrm_equipe
-and EXISTS (select u.login from crm_equipe_membro cem inner join usuario u on u.idusuario = cem.idusuario ---esteb  where cem.idcrm_equipe = :idcrm_equipe and cl.login = u.login)
--- and (() or (cl.login in (f_json_table(:login_usuario,cl.login)))) or :login_usuario is null)
+and cp2.idestabelecimento = {{:idestabelecimento}}
+and EXISTS(select u.login from crm_equipe_membro cem inner JOIN crm_equipe ce on ce.idcrm_equipe = cem.idcrm_equipe inner join crm_funil_participante cfp on cfp.idcrm_equipe = ce.idcrm_equipe  inner join usuario u on u.idusuario = cem.idusuario where (cem.idcrm_equipe in (f_json_table(:idcrm_equipe,cem.idcrm_equipe))) and cl.login = u.login and cl.idcrm_funil =cfp.idcrm_funil  and ce.idestabelecimento = {{:idestabelecimento}})  
 and (cl.login in (f_json_table(:login_usuario,cl.login)) or :login_usuario is null)
 and (cl.idcrm_funil in (f_json_table(:idcrm_funil, cl.idcrm_funil)) or :idcrm_funil is null)
 and (cl.idcrm_funil_etapa in (f_json_table(:crm_funil_etapa, cl.idcrm_funil_etapa)) or :crm_funil_etapa is null)
 and (cl.ie_etiqueta in (f_json_table(:etiqueta,cl.ie_etiqueta)) or cl.ie_etiqueta in (select coalesce(:etiqueta,vl_dominio) from dominio_valor where iddominio = 612))
 and (cl.idcrm_origem_lead in (f_json_table(:crm_origem_lead,cl.idcrm_origem_lead)) or :crm_origem_lead is null) 
 order by cl.login, cl.nr_seq_apresent;
-
-
-SELECT * from estabelecimento e 
-SELECT * from usuario u 
-SELECT * FROM crm_equipe ce 
