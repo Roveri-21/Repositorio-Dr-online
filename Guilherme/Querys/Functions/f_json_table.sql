@@ -21,3 +21,13 @@ where
 	and(ap.ie_status_atendimento in(f_json_table(:status,ap.ie_status_atendimento))or :status is NULL);
 	
 -- use o seguinte parametro em status = "[\"C\",\"A\"]"
+
+
+
+--- para pegar um valo que foi armazenado como json e assim
+(select  GROUP_CONCAT(cp.ds_produto order by cp.ds_produto SEPARATOR ', ') -- deve ser feito um select onde contem a descrição de fato 
+   from crm_produto cp
+   where cp.idcrm_produto in ((select j.id from json_table(coalesce(cl.cd_produto_ganho,'[]'), '$[*]' columns (id int path '$'))j))) as ds_produto_ganho -- em seguida deve
+   -- ser feita a criação dessa query, onde o campo que contem o json vai ser informado
+
+   
