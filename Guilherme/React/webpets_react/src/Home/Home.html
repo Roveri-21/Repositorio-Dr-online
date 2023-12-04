@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+   <head>
+      <meta charset='UTF-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>WebPets</title>
+      <link rel=stylesheet href=Front.css>
+      <script type=module src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="javascript/Grafico_barra.js"></script>
+      <script src="javascript/Grafico_rosquinha.js"></script>
+      <script src="./node_modules/chart.js/dist/Chart.js"></script> 
+      <script src="javascript/logout.js"></script>
+      
+   </head>
+   <body>
+         <div class="menu" id="menu">
+            <!-- <img src="/imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo"> -->
+            <!-- <img src="/imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo"> -->
+            <img src="imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo">
+            <ul>
+               <li class='lista ativa'>
+                  <a href='Home.html'>
+                     <span class='icone'>
+                        <ion-icon name='paw-outline'></ion-icon>
+                     </span>
+                     <span class='lista'>Home</span>
+                  </a>
+               </li>
+            </ul>
+            <ul>
+               <li class='lista'>
+                  <a href='Transações.html' class='transacao'>
+                     <span class='icone'><ion-icon name='cash-outline'></ion-icon></span>
+                     <span class='lista'>Transações</span>
+                  </a>
+                  <ul class='Itens_transacao'>
+                     <li><a href='#' class='pix'>Pix</a></li>
+                     <li><a href='#' class='dinheiro'>Dinheiro</a></li>
+                     <li><a href='#' class='cartao'>Cartão</a></li>
+                  </ul>
+               </li>
+            </ul>
+            <ul>
+               <li class='lista'>
+                  <a href='Estoque.html'>
+                     <span class='icone'>
+                        <ion-icon name='cube-outline'></ion-icon>
+                        </ion-icon>
+                     </span>
+                     <span class='lista'>Estoque</span>
+                  </a>
+               </li>
+            </ul>
+            <ul>
+               <li class='lista'>
+                  <a href='Admin.html'>
+                     <span class='icone'>
+                        <ion-icon name='person-outline'></ion-icon>
+                        </ion-icon>
+                     </span>
+                     <span class='lista'>Admin</span>
+                  </a>
+               </li>
+            </ul>
+            <ul>
+               <li class='lista'>
+                  <a href='Logs.html'>
+                     <span class='icone'>
+                        <ion-icon name='reader-outline'></ion-icon>
+                        </ion-icon>
+                     </span>
+                     <span class='lista'>Logs</span>
+                  </a>
+               </li>
+            </ul>
+               <ul>
+                  <li class='lista'>
+                     <a href='Login/Login.html' id='log-out'>
+                        <span class='icone'>
+                        <ion-icon name='log-out-outline'></ion-icon>
+                        </span>
+                        <span class='lista'>Sair</span>
+                     </a>
+                  </li>
+               </ul>
+         </div>
+      
+
+      <main class="main-content" id="main-content">
+         <div class="conteudo" id="conteudo" >            
+               <section class="personal-data">
+                  <fieldset id="formularioAdicionar">
+                     <legend>Pesquisa</legend>
+                     <label for="nomeVendedor">Nome Vendedor:</label>
+                     <input type="text" id="nomeVendedor" placeholder="Nome Vendedor">
+                     <label for="nomeProduto">Nome Produto:</label>
+                     <input type="text" id="nomeProduto" placeholder="Nome Produto">
+                     <label for="valorProduto">Valor Produto:</label>
+                     <input type="text" id="valorProduto" placeholder="Valor Produto">
+                     <label for="CPF">CPF:</label>
+                     <input type="text" id="CPF" placeholder="CPF do vendedor">
+                     <label for="dataVencimento">Data de Vencimento:</label>
+                     <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
+                     <button id="buttonAdicionar">Buscar</button>
+                 </fieldset>
+               </section>
+               <section class="data-tabela">
+                  <div class='tabela' id='tabela'>
+                     <fieldset>
+                        <legend>Ultimas vendas</legend>
+                        <table id="tabelaProdutos" class="tabelaProdutos">
+                           <thead>
+                              <tr>
+                                 <th>Nome Vendedor</th>
+                                 <th>Data Vencimento</th>
+                                 <th>CPF</th>
+                                 <th>Nome do Produto</th>
+                                 <th>Valor Produto</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Carlos Oliveira</td>
+                                 <td>20/12/2023</td>
+                                 <td>111.222.333-44</td>
+                                 <td>Captão dog</td>
+                                 <td>R$500,00</td>
+                              </tr>
+                              <tr>
+                                 <td>Maria Souza</td>
+                                 <td>10/05/2023</td>
+                                 <td>987.654.321-11</td>
+                                 <td>Magnus</td>
+                                 <td>R$400,00</td>
+                              </tr>
+                              <tr>
+                                 <td>João Silva</td>
+                                 <td>01/01/2023</td>
+                                 <td>444.756.789-12</td>
+                                 <td>Special dog</td>
+                                 <td>R$200,00</td>
+                              </tr>
+                              <tr>
+                                 <td>Guilherme Silva</td>
+                                 <td>01/05/2023</td>
+                                 <td>333.466.789-46</td>
+                                 <td>Special dog</td>
+                                 <td>R$150,00</td>
+                              </tr>
+                              <tr>
+                                 <td>Gabriel Silva</td>
+                                 <td>01/12/2023</td>
+                                 <td>222.456.789-02</td>
+                                 <td>Special dog</td>
+                                 <td>R$100,00</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </fieldset>
+                     <canvas id="chart"></canvas>
+                  </div>
+               </section>
+               <section class="analysis">
+                  <legend id="labelGafricos">Analise de Ganhos do mes</legend>
+                     <div class="graficos">
+                           <div class="GraficoBarra">                    
+                                    <canvas id="myChart"></canvas>                 
+                           </div>
+                        <div class="GraficoRosquinha">
+                           <section>      
+                                 <canvas id="donutChart"></canvas>
+                           </section>
+                        </div>
+                     </div>
+               </section>        
+         </div>
+      </main>
+      <script src="ajax.js"></script>
+   </body>
+</html>

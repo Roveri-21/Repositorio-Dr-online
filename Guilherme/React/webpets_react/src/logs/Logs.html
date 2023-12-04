@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <style>
+        
+hr {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para a tabela de estoque */
+  #tabelaProdutos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #tabelaProdutos th, #tabelaProdutos td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  #tabelaProdutos th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para os campos de filtro e adição de produtos */
+  h2 {
+    margin-top: 20px;
+  }
+  
+  label {
+    
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para os campos de filtro */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 10%; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Alinhe os campos de filtro na mesma linha */
+  .filtro {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }  
+  button:hover {
+    background-color:grey;
+  }
+  .filtrobutton{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  #formularioAdicionar {
+    display: none;
+}
+
+/* Estilo para o botão "Adicionar Novo Produto" */
+#mostrarFormulario {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#mostrarFormulario:hover {
+    background-color: grey;
+}
+.pagination-buttons {
+            float: right;
+            margin-top: 10px;
+        }
+  /* Estilo para o botão de páginação */
+  .pagination-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+
+        /* Estilo de hover para o botão de páginação */
+        .pagination-button:hover {
+            background-color: #0056b3;
+        }  
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Logs</legend>
+        <label for="filtroProdutoId">Usuário:</label>
+        <input type="text" id="filtroProdutoId" placeholder="Produto ID">
+        <label for="filtroNomeProduto">Id alteração:</label>
+        <input type="text" id="filtroNomeProduto" placeholder="Nome Produto">
+        <label for="filtroQuantidade">Descrição atualizações:</label>
+        <input type="text" id="filtroQuantidade" placeholder="Quantidade">
+        <label for="filtroDataVencimento">Data de Atualização:</label>
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
+        <label for="filtroValorEstoque">Ultimas ações:</label>
+        <input type="text" id="filtroValorEstoque" placeholder="Valor do Estoque">
+        <button id="filtrobutton" class="filtrobutton">Buscar</button>
+    </fieldset>
+    <!-- Tabela de Logs -->
+    <h2>Ultimos logs</h2>
+    <table id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Usuaio</th>
+                <th>id alteração</th>
+                <th>Descrição atualizaçõa</th>
+                <th>Data atualizaçõa</th>
+                <th>Ultimas ações</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>user123</td>
+            <td>001</td>
+            <td>Atualização de endereço</td>
+            <td>10/10/2023</td>
+            <td>Usuário bloqueado</td>
+        </tr>
+        <tr>
+            <td>jane_doe</td>
+            <td>002</td>
+            <td>Adição de novo produto</td>
+            <td>15/10/2023</td>
+            <td>Usuário desbloqueado</td>
+        </tr>
+        <tr>
+            <td>john_smith</td>
+            <td>003</td>
+            <td>Alteração de preço</td>
+            <td>20/10/2023</td>
+            <td>remoção de produto</td>
+        </tr>
+        <tr>
+            <td>user456</td>
+            <td>004</td>
+            <td>Atualização de estoque</td>
+            <td>25/10/2023</td>
+            <td>novo vendedor</td>
+        </tr>
+        <tr>
+            <td>alice_jones</td>
+            <td>005</td>
+            <td>Correção de erros</td>
+            <td>30/10/2023</td>
+            <td>remoção de produto</td>
+        </tr>
+        <tr>
+            <td>mark_jackson</td>
+            <td>006</td>
+            <td>Atualização de imagens</td>
+            <td>05/11/2023</td>
+            <td>novo produto</td>
+        </tr>
+        <tr>
+            <td>susan_smith</td>
+            <td>007</td>
+            <td>Alteração de descrição</td>
+            <td>10/11/2023</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>user789</td>
+            <td>008</td>
+            <td>Adição de novas categorias</td>
+            <td>15/11/2023</td>
+            <td>Estoque</td>
+        </tr>
+        <tr>
+            <td>david_wilson</td>
+            <td>009</td>
+            <td>Atualização de links</td>
+            <td>20/11/2023</td>
+            <td>Estoque</td>
+        </tr>
+        <tr>
+            <td>emily_adams</td>
+            <td>010</td>
+            <td>Correção de formatação</td>
+            <td>25/11/2023</td>
+            <td>Transações</td>
+        </tr>        
+        </tbody>
+    </table>
+    <button class="pagination-button">50</button>
+    <button class="pagination-button">100</button>
+    <button class="pagination-button">150</button>
+    <button class="pagination-button">...</button>
+    <script>
+        // Funções JavaScript aqui
+    </script>
+</body>
+</html>
+        
+        <script src="ajax.js"></script>
+        
+        
+        
+        
+        
