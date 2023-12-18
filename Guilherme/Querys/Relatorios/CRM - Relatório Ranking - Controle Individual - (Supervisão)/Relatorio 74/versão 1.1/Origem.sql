@@ -12,5 +12,6 @@ where
 	DATE_FORMAT(cl.dt_ganho, '%m/%Y') = DATE_FORMAT(:dt_ref, '%m/%Y')
 	and cl.status = 'A'
 	and cl.dt_ganho is not null
+	and cl.idcrm_funil = :idcrm_funil
 	group by col.ds_origem                    
 	order by cl.dt_ganho desc;
