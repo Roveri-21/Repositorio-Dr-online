@@ -1,0 +1,28 @@
+// json para captar as origens 
+
+//Versão antiga
+{
+    "ds_titulo": "Lead do Chatbot",
+    "nm_pessoa": "$[contato_ds_nome]$",
+    "ie_whatsapp": "S",
+    "nr_telefone": "$[contato_nr_telefone]$",
+    "ds_observacao": "Integração Chatbot - $[contato_ds_nome]$ - $[contato_nr_cliente_canal]$ - Mensagem: $[mensagem_ds_conteudo]$",
+    "idcrm_origem_lead": "77",
+    "idcrm_funil": 2,
+    "idestabelecimento": 2,
+    "vincular_lead_atendimento": "S"
+  }
+  
+  //versão nova
+  
+  {
+    "ds_titulo": "Lead do Chatbot",
+    "nm_pessoa": "$[contato_ds_nome]$",
+    "ie_whatsapp": "S",
+    "nr_telefone": "$[contato_nr_telefone]$",
+    "ds_observacao": "Integração Chatbot - $[contato_ds_nome]$ - $[contato_nr_cliente_canal]$ - Mensagem: $[mensagem_ds_conteudo]$",
+    "idcrm_origem_lead": "$[system_origemLead]$",
+    "idcrm_funil": 2,
+    "idestabelecimento": 2,
+    "vincular_lead_atendimento": "S"
+  }
