@@ -1,106 +1,75 @@
-/* Reset de estilos básicos para todos os elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.menu img {
-  max-width: 80%; /* A imagem se ajustará automaticamente à largura do seu contêiner */
-  height: auto; /* A altura será ajustada proporcionalmente */
-  border-radius: 40%;
-  border: 3px solid #D9A3A3;
-  box-shadow: 0 2px 5px #ddb9b9;
-  margin-top: -30px;
-  margin-left: 20px;
-  max-height: auto;
-}
 
-/* Estilos para a imagem */
-.logo img {
+/* Estilos para a imagem do menu */
+.menu img, .logo img {
   width: 100px;
   height: 100px;
-  border-radius: 40%;  
+  border-radius: 50%; /* Corrigindo a forma do círculo */
   border: 3px solid #D9A3A3;
-  box-shadow: 0 2px 5px #ddb9b9; 
-  object-fit: cover;
-  margin-top: -30px;
-  margin-left: 20px;
+  box-shadow: 0 2px 5px #ddb9b9;
+  object-fit: cover; /* A imagem se ajustará ao contêiner sem distorção */
+  margin: 20px; /* Margem uniforme */
 }
 
 /* Estilos para o menu */
 .menu {
   width: 250px;
   height: 100%;
-  padding-top: 70px;
+  padding-top: 50px; /* Ajuste da altura do cabeçalho */
   position: fixed;
   top: 0;
   left: 0;
   background: #ddb9b9;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 20px; /* Simplificação do padding */
   overflow-y: auto;
 }
 
 /* Estilos para os itens do menu */
-.menu ul{
-  padding-top: 10%;
-    list-style: none;
-}
-.menu ul ul {
-  display: none;
-  top: 0;
-  left: 100%;
+.menu ul {
+  list-style: none;
+  padding: 20px 0; /* Espaçamento uniforme */
 }
 
 .menu ul li {
-  position: relative;
-  padding: 10px;
-  line-height: 40px;
+  padding: 15px 0; /* Espaçamento uniforme */
 }
 
 .menu ul li a {
   display: block;
   text-decoration: none;
   color: #fff;
-  font-size: 20px;
-  padding-left: 20px;
-  position: sticky;
+  font-size: 18px;
   transition: color 0.3s; /* Adiciona transição suave na cor do texto */
 }
+
 .menu ul li a:hover {
   text-decoration: underline;
   font-weight: bold;
   color: #D9A3A3; /* Altera a cor ao passar o mouse */
 }
+
 /* Estilos para o conteúdo */
 .conteudo {
-  width: calc(100% - 300px); /* A largura do conteúdo será o tamanho total menos a largura do menu */
-  height: 90%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top:3%;
+  width: calc(100% - 250px); /* Ajuste da largura do conteúdo */
+  height: 100vh; /* Altura ajustada à viewport */
+  padding: 20px; /* Simplificação do padding */
   position: absolute;
+  top: 0;
   right: 0;
   background: #ffffff;
-  box-shadow: 0 0 0px rgba(243, 4, 4, 0.2);  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Suavização da sombra */
 }
-.conteudo .elemento-estilizado {
-  width: calc(100% - 150px);
-  height: 95%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top:3%;
-  position: absolute;  
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  border-radius:1%;
-}
+
 /* Estilos para a aba */
 .aba {
   position: absolute;
-  top: -30px; /* Ajuste a posição vertical conforme necessário para alinhar com o topo do fieldset */
-  left: 0px; /* Ajuste a posição horizontal conforme necessário */
+  top: 20px; /* Ajuste da posição vertical */
+  left: -20px; /* Ajuste da posição horizontal */
   background-color: #D9A3A3;
   color: #fff;
   padding: 10px 20px;
@@ -108,8 +77,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000; /* Garante que a aba esteja na frente de outros elementos */
 }
-/* Estilos para o fieldset */
-
 
 
 .conteudo section{
@@ -200,10 +167,14 @@ input[type="number"]{
 }
 
 .tabela th{
-  color: #D9A3A3;
   padding: 1%;
   width: auto;
   border: 1px solid #ddd;
+  background-color: #fdf9f5;
   padding: 10px;
   text-align: center;
+}
+.tabela tbody{
+  background-color: #fdf9f5;
+  
 }
