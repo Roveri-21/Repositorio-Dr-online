@@ -5,4 +5,5 @@ from
 	crm_funil_etapa cfe 
 WHERE
 	cfe.idcrm_funil = :idcrm_funil
-	and cfe.status = 'A';
+	and cfe.status = 'A'
+ORDER by cfe.nr_sequencia asc;
