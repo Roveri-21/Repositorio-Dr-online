@@ -1,0 +1,4 @@
+GET: Método genérico para qualquer requisição que busca dados do servidor;
+POST: Método genérico para qualquer requisição que envia dados ao servidor;
+PUT: Método específico para atualização de dados no servidor;
+DELETE: Método específico para remoção de dados no servidor
