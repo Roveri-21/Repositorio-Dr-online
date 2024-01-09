@@ -1,0 +1,3 @@
+npm nodemon -D
+
+baixa uma dependencia que restarta o node sem a necessidade de inicia novamente.
