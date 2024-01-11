@@ -33,3 +33,31 @@ server.listen(3000);
 
 
 
+
+
+
+
+
+const express = require('express'); //exporta o express
+const { Route } = require('react-router-dom');
+
+const server = express();
+const cursos = ['Node Js', 'JavaScript','React']
+// localhost:3000/curso
+
+server.get('/cursos/', (req, res) => {
+    
+return res.json(cursos);
+});
+
+
+server.listen(3000);
+
+
+
+
+
+
+
+
+
