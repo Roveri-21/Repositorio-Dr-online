@@ -1,0 +1,18 @@
+HTTP Codigos e  tipos de metodos htto e seus resultados de Api
+> 1xx: Information
+
+> 2XXx: Success
+- 200: Success
+- 201: Created
+
+> 3xx: Redirection
+- 301: Moved Permanently
+- 302: Moved
+
+> 4xx: Client Error
+- 400: Bad Request = erros do proprio cliente o rfonte envio algum erro
+- 401: Unauthorized = erros de não altorizado
+- 404: Not found = Não existe
+
+> 5xx: Server Error
+- 500: Erro interno do servidor
