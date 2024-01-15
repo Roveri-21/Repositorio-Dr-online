@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para a imagem do menu */
+.menu img, .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Corrigindo a forma do círculo */
+  border: 3px solid #D9A3A3;
+  box-shadow: 0 2px 5px #ddb9b9;
+  object-fit: cover; /* A imagem se ajustará ao contêiner sem distorção */
+  margin: 20px; /* Margem uniforme */
+}
+
+/* Estilos para o menu */
+.menu {
+  width: 250px;
+  height: 100%;
+  padding-top: 50px; /* Ajuste da altura do cabeçalho */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ddb9b9;
+  padding: 20px; /* Simplificação do padding */
+  overflow-y: auto;
+}
+
+/* Estilos para os itens do menu */
+.menu ul {
+  list-style: none;
+  padding: 20px 0; /* Espaçamento uniforme */
+}
+
+.menu ul li {
+  padding: 15px 0; /* Espaçamento uniforme */
+}
+
+.menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s; /* Adiciona transição suave na cor do texto */
+}
+
+.menu ul li a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #D9A3A3; /* Altera a cor ao passar o mouse */
+}
+
+/* Estilos para o conteúdo */
+.conteudo {
+  width: calc(100% - 250px); /* Ajuste da largura do conteúdo */
+  height: 100vh; /* Altura ajustada à viewport */
+  padding: 20px; /* Simplificação do padding */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Suavização da sombra */
+}
+
+/* Estilos para a aba */
+.aba {
+  position: absolute;
+  top: 20px; /* Ajuste da posição vertical */
+  left: -20px; /* Ajuste da posição horizontal */
+  background-color: #D9A3A3;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Garante que a aba esteja na frente de outros elementos */
+}
+
+
+.conteudo section{
+  flex-direction: column;
+  
+}
+.GraficoBarra, .GraficoRosquinha {
+  flex: 0 0 calc(50% - 10px); /* Dois gráficos por linha */
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px; /* Espaçamento entre os gráficos na direção horizontal */
+}
+.graficos{
+  padding: 10px;
+  display: flex;  
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.data-table {
+  margin-bottom: 20px;
+  /* Estilos para a seção da tabela de dados */
+}
+
+/* Estilos para o fieldset */
+fieldset {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px; /* Reduza o espaço superior para acomodar a aba */
+  position: relative; /* Permitir que a aba fique acima do fieldset */
+}
+
+/* Estilos para o conteúdo do fieldset */
+fieldset legend {
+  background-color: #fff; /* Adicione uma cor de fundo para separar a aba do conteúdo do fieldset */
+  padding: 0 10px;
+  position: absolute;
+  top: -10px; /* Ajuste para alinhar com a aba */
+  left: 10px; /* Ajuste para alinhar com a aba */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+}
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}  
+button:hover {
+  background-color:grey;
+}
+input[type="date"] {
+  width: 110px; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+/* Estilos para os campos de filtro */
+input[type="text"],
+input[type="number"]{
+  width: 20%; /* Defina a largura desejada para os campos de filtro */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+#tabelaProdutos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabelaProdutos th, #tabelaProdutos td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+#tabelaProdutos th {
+  background-color: #f2f2f2;
+}
+
+.tabela th{
+  padding: 1%;
+  width: auto;
+  border: 1px solid #ddd;
+  background-color: #fdf9f5;
+  padding: 10px;
+  text-align: center;
+}
+.tabela tbody{
+  background-color: #fdf9f5;
+  
+}

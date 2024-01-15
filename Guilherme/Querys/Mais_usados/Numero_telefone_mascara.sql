@@ -1,0 +1,1 @@
+CONCAT('+',cpc.nr_ddi_telefone,'(',cpc.nr_ddd_telefone,')',cpc.nr_telefone) as telefone,

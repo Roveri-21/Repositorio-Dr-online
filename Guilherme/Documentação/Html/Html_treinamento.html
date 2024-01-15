@@ -1,0 +1,297 @@
+Html codigos
+
+<H1>Titulo</H1>
+
+<P>Paragrafo</P>
+
+<B>Negrito</B>
+
+<BR>Quebra de Linha</BR>
+
+
+Do h1 ate o h6 são todos titulos 
+
+<H1>Titulo</H1>
+
+<H2>Subtitulo</H2>
+
+<H3></H3>
+
+<H4></H4>
+
+<H5></H5>
+
+<H6></H6>
+
+<I>Italico</I>
+
+<em>Italico semântico </em>
+
+<strong>Negrito semântico </strong> = 'A palavra tem importancia no texto diferente da tag <b></b> 
+
+<ul>Lista não ordenada
+    <li>primeiro item</li>
+    <li>segundo item</li>
+</ul>
+
+<ol>Lista ordenada 
+<li>pirmeiro item</li>
+<li>segundo item</li>
+</ol>
+
+<a>Link para acessasr outra pagina</a>
+ 
+Nesse caso colocamos o link que ao clicar vanos abrir  durante uma pesquisa
+
+<a> Para ler mais quadrinhos clique no linke a baixo </a>
+<a href="http://baixarquadrinhos.com/Categoria-Quadrinho/marvel/">quadrinhos</a>
+
+Nesse caso vamos induzir o site a abrir uma aba em uma nova janela
+
+<a> Para ler mais quadrinhos clique no linke a baixo </a>
+<a href="http://baixarquadrinhos.com/Categoria-Quadrinho/marvel/"targert="_blanc">quadrinhos</a>
+
+Nesse caso vamos vincula o texto com o campo selecionado 
+<label for="unico">Senha</label> 
+
+Nesse caso vamos usar usado para criar gruopos logicos 
+<fieldset></fieldset> 
+
+Nesse caso vamos definir a legenda do topo
+<legend>Login</legend>
+
+Nesse caso usamos o tipo correto para o email 
+ <input type="email"> 
+
+Nesse caso para definirmos a quantidade de minma e maxima defemos fazer o seguinte cuidado
+<input type="number" min="0" max="10">
+
+Nesse caso para definir um tempo maximo e um minimo lembrando que segue  o padrão americano ano/mes/dia
+<input type="date" min="2018-01-30" max="2100-01-30">
+
+Nesse caso usamos os seguinte codigos para definir o sexo
+    <p>Sexo:</p>
+    <input type="radio" name="sexo" value="F">
+    <label for="">Feminino</label>
+
+    <input type="radio" name="sexo" value="M">
+    <label for="">Masculino</label>
+	
+	
+	
+///////////////
+Feito no serviço 
+
+Usado para trazer site de fora 
+<a href="https://translate.google.com/">use um texto para pode trazer o link quando clicarmos</a>
+
+usado para trazer algum arquivo da pagina 
+<a href="outraPagina.html"></a>
+
+Usado para scrolar a tela ate a parte em questão com o email 
+<a href="mailto:alguem@server.com">
+
+Usado para trazer uma secao
+<a href="'#secao"></a>
+
+Usado para abir uma nova pagina em outra aba sem fecha a anterior 
+<a href="https://translate.google.com/"target="_blank">
+
+Usamos para não deixa a imagem de fundo escrolar e repitr pra chegar no fina do site*/
+background-attachment: scroll ;
+
+Usamos para deixar a imagem de fundo fixa 
+background-attachment: fixed; 
+
+Usamo a tag div para criar caixas/areas para criar uma estrutura 
+<div>
+
+Usamos a tag footer para o rodape da nossa pagina 
+<footer>
+
+Usamos a tag man para definir o conteudo, dessa forma quando for feita uma pesquisa a pesquisa vai bater no conteudo do seu site e demosntralo como 
+fonte de pesquisa
+<Main>
+
+Usamos a <section> para separar uma secao do nosso site, divide o conteudo em blocos
+<section>
+
+Usamos para definir um conteudo que seja a parte do conteudo principal.
+<aside>
+
+Usamos ela como elemento de linha, não vai gerar quebra de linha
+<span>
+//////////////////////////////////////////////
+
+Usamos o block para ocupar toda a area disponivel,e vai gerar uma quebra de linha
+<block>
+
+Usamos a teg inline para se comportar como linha, vai ocupar apenas o necessario e não todo o conteudo.
+<inline>
+
+Usamo o em elemento de linha para podermos fazer 
+display :block;
+
+Usamos o inline para inline-block para fazer o elemento de linha no bloco
+display: inline-block 
+
+Usamos o nome para tira tudo 
+display :none;
+
+Usamos para limpar algum elemento antes 
+clear:left ou rigth; 
+
+Usamos para ordenar o que vai empilhar em cima de outro
+z-index 
+
+Lista aninhadas e quando fazemos uma lista dentro de outra 
+<ul>
+ <li>
+  <ul>
+   <li>
+    <li>
+	 </ul>
+ </ul>
+
+
+Lista de definição dl  e onde eu tenho um termo e uma definição
+dt e a definição 
+dd e a descrição. 
+    <dl>
+    <dt>Lista de definição</dt>
+    <dd>Lista de definição</dd>
+    </dl>
+	
+ Mais exemplo de dl
+    <dl>
+	<dt>Definição</dt>
+    <dd>Descrição</dt>
+    <dd>Descrição</dd>
+    </dl>
+	
+ Ultimo exemplo 
+
+    <dl>
+    <dt>Definição</dt>
+    <dt>Definição</dd>
+	<dd>Descrição</dd>
+    </dl>
+
+ OverFlow
+  Ele e responsavel por esconder parte do texto que não cabe.Usamos ele dentro do Css
+
+
+ Usamos para adicionnar uma opção de scroll no texto em questão 
+    #Container2{
+        overflow: scroll;
+    }
+	
+ Tabelas 
+ tr = coluna da tabela .
+ td = e a celula da tabela. 
+        <table>
+            <tr>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+		
+ Para mesclar as linahs das colunas devemos usar os seguintes valores  
+  Para criar uma celula mesclando duas colunas devemos usar o colspan na linha
+        <table>
+            <tr>
+                <td colspan="2">1A</td>
+                <td>2A</td><td>2b</td>
+            </tr>
+            <tr>
+                <td>3A</td> <td>3B</td>
+            </tr>
+        </table>
+
+ Para mesclar duas celulas em uma coluna devemos usar rowspan e definir as celulas
+ 
+ <div class="Container3">
+        <table>
+            <tr>
+                <td rowspan="2">1A</td> <td>1b</td>
+            </tr>
+            <tr>
+                <td>2B</td>
+            </tr>
+
+            <tr>
+                <td>3A</td> <td>3B</td>
+            </tr>
+
+        </table>
+
+ Para usamors um cabeçario em um tabela devemos usar o <th>
+
+<div class="Cabeçalho">
+        <table>
+            <tr>
+                <th>Cabeçalho 1</th> <th>Cabeçalho 2</th>
+            </tr>
+            
+            <tr>
+                <td>2A</td> <td>2B</td>
+            </tr>
+            
+            <tr>
+                <td>3A</td> <td>3B</td>
+            </tr>
+        </table>
+    </div>
+
+ Corpo padrão da tabela
+
+<div class="Corpo">
+        <table>
+		<caption></caption>
+            <thead>
+
+            </thead>
+            
+            <tfoot>
+
+            </tfoot>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    </body>
+
+
+Exemplo de uso 
+    <div class="Corpo">
+        <table>
+            <thead>
+            <tr>
+                <th>Cabeçalho 1</th> <th>Cabeçalho 2</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>2A</td> <td>2B</td>
+            </tr>
+            
+            <tr>
+                <td>3A</td> <td>3B</td>
+            </tr>
+        </tbody>
+            
+        </table>
+    </div> 
+ 
+ 
+ Formulario usamos para fornercer um campo para o usuario digitar 
+ 
+ 
+

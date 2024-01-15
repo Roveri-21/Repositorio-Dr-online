@@ -1,0 +1,1 @@
+select :idestabelecimento idestabelecimento, :idcrm_funil idcrm_funil, CURRENT_DATE();

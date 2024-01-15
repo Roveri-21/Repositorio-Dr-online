@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* background: linear-gradient(to bottom right, rgba(187, 133, 223, 0.7), rgba(238, 101, 59, 0.7));
+    font-family: Arial, sans-serif; */
+    background-color: #D9A3A3;
+    color: #fff;
+  }
+  
+  .container {
+    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    background: linear-gradient(to bottom right,#ddb9b9, rgba(231, 116, 81, 0.7));
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    background-color: #f2f2f2;
+  }
+  
+  button[type="submit"] {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .copy {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+  }
+  
+  .container h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+  }
+  

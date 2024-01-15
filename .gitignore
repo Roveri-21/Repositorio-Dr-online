@@ -1,0 +1,9 @@
+/node_modules
+/cypress
+/meu
+/webpets
+.dbeaver
+
+cypress.config.js
+package-lock.json
+package.json

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewt" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <style>
+        
+hr {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para a tabela de estoque */
+  #tabelaProdutos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #tabelaProdutos th, #tabelaProdutos td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  #tabelaProdutos th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para os campos de filtro e adição de produtos */
+  h2 {
+    margin-top: 20px;
+  }
+  
+  label {
+    
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  input[type="date"]{
+    width: 110px; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  /* Estilos para os campos de filtro */
+  input[type="text"]{
+    width: 20%; /* Defina a largura desejada para os campos de filtro */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Alinhe os campos de filtro na mesma linha */
+  .filtro {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }  
+  button:hover {
+    background-color:grey;
+  }
+  .filtrobutton{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  #formularioAdicionar {
+    display: none;
+}
+
+/* Estilo para o botão "Adicionar Novo Produto" */
+#mostrarFormulario {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#mostrarFormulario:hover {
+    background-color: grey;
+}  
+.buttonAdicionarRemover{
+  background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+
+}
+#filtroProdutoId{
+  width: 150px; /* Defina a largura desejada para os campos de filtro */
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+.pagination-buttons {
+            float: right;
+            margin-top: 10px;
+        }
+  /* Estilo para o botão de páginação */
+  .pagination-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+
+        /* Estilo de hover para o botão de páginação */
+        .pagination-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+      <LEgend>Estoque</LEgend>
+        <label for="filtroProdutoId">Produto ID:</label>
+        <input type="text" id="filtroProdutoId" placeholder="Produto ID">
+        <label for="filtroNomeProduto">Nome Produto:</label>
+        <input type="text" id="filtroNomeProduto" placeholder="Nome Produto">
+        <label for="filtroQuantidade">Quantidade:</label>
+        <input type="text" id="filtroQuantidade" placeholder="Quantidade">
+        <label for="filtroValorProduto">Valor Produto:</label>
+        <input type="text" id="filtroValorProduto" placeholder="Valor Produto">
+        <label for="filtroDescricaoProduto">Descrição Produto:</label>
+        <input type="text" id="filtroDescricaoProduto" placeholder="Descrição Produto">
+        <label for="filtroDataVencimento">Data de Vencimento:</label>
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
+        <label for="filtroDataVencimento">Data Criação:</label>
+        <input type="date" id="filtroDataVencimento" placeholder="Data de Vencimento">
+        <label for="filtroValorEstoque">Valor do Estoque:</label>
+        <input type="text" id="filtroValorEstoque" placeholder="Valor do Estoque">
+        <button id="filtrobutton" class="filtrobutton">Buscar</button>
+        <button id="mostrarFormulario">Novo</button>
+        <button id="buttonAdicionarRemover" class="buttonAdicionarRemover">Remover</button>
+    </fieldset>
+    
+
+    <!-- Adicionar Produto -->
+    <fieldset id="formularioAdicionar">
+        <legend>Novo Produto</legend>
+        <label for="nomeProduto">Nome Produto:</label>
+        <input type="text" id="nomeProduto" placeholder="Nome Produto">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" placeholder="Quantidade">
+        <label for="valorProduto">Valor Produto:</label>
+        <input type="text" id="valorProduto" placeholder="Valor Produto">
+        <label for="descricaoProduto">Descrição Produto:</label>
+        <input type="text" id="descricaoProduto" placeholder="Descrição Produto">
+        <label for="dataVencimento">Data de Vencimento:</label>
+        <input type="date" id="dataVencimento" placeholder="Data de Vencimento">
+        <label for="valorEstoque">Valor do Estoque:</label>
+        <input type="text" id="valorEstoque" placeholder="Valor do Estoque">
+        <button id="buttonAdicionar">Criar</button>
+    </fieldset>
+    <!-- Tabela de estoque -->
+    <h2>Produtos</h2>
+    <table id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Produto id</th>
+                <th>Nome Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Produto</th>
+                <th>Descrição Produto</th>
+                <th>Data vencimento</th>
+                <th>Valor do Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Ração Pedigree para Cães - 10kg</td>
+            <td>10 </td>
+            <td>R$ 75,90</td>
+            <td>Ração balanceada para cães de todas as idades.</td>
+            <td>25/10/2023</td>
+            <td>R$ 759,00</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Ração Whiskas para Gatos - 5kg</td>
+            <td>20 </td>
+            <td>R$ 45,50</td>
+            <td>Ração saborosa para gatos adultos.</td>
+            <td>28/10/2023</td>
+            <td>R$ 910,00</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>Areia Sanitária Chalesco - 4kg</td>
+            <td>15 </td>
+            <td>R$ 12,99</td>
+            <td>Areia higiênica para gatos, elimina odores.</td>
+            <td>30/10/2023</td>
+            <td>R$ 194,85</td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td>Granulado de Madeira para Roedores - 2kg</td>
+            <td>30 </td>
+            <td>R$ 18,75</td>
+            <td>Granulado natural para roedores, não tóxico.</td>
+            <td>02/11/2023</td>
+            <td>R$ 562,50</td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td>Ração Nutricon para Pássaros - 1kg</td>
+            <td>50 </td>
+            <td>R$ 8,99</td>
+            <td>Alimento completo para pássaros.</td>
+            <td>05/11/2023</td>
+            <td>R$ 449,50</td>
+        </tr>
+        <tr>
+            <td>006</td>
+            <td>Ração TetraMin para Peixes Tropicais - 100g</td>
+            <td>25 </td>
+            <td>R$ 6,75</td>
+            <td>Ração em flocos para peixes tropicais.</td>
+            <td>10/11/2023</td>
+            <td>R$ 168,75</td>
+        </tr>
+        <tr>
+            <td>007</td>
+            <td>Ração NutriDog para Cães - 15kg</td>
+            <td>10 </td>
+            <td>R$ 120,00</td>
+            <td>Ração premium para cães de raças grandes.</td>
+            <td>15/11/2023</td>
+            <td>R$ 1.200,00</td>
+        </tr>
+        <tr>
+            <td>008</td>
+            <td>Shampoo Antipulgas e Carrapatos para Cães - 500ml</td>
+            <td>40 </td>
+            <td>R$ 22,50</td>
+            <td>Shampoo eficaz contra pulgas e carrapatos.</td>
+            <td>20/11/2023</td>
+            <td>R$ 900,00</td>
+        </tr>
+        <tr>
+            <td>009</td>
+            <td>Brinquedo para Gatos com Catnip</td>
+            <td>50 </td>
+            <td>R$ 7,99</td>
+            <td>Brinquedo recheado com catnip para gatos.</td>
+            <td>25/11/2023</td>
+            <td>R$ 399,50</td>
+        </tr>
+        <tr>
+            <td>010</td>
+            <td>Areia de Sílica para Gatos - 3,8L</td>
+            <td>30 </td>
+            <td>R$ 14,95</td>
+            <td>Areia higiênica de sílica para gatos.</td>
+            <td>30/11/2023</td>
+            <td>R$ 448,50</td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <button class="pagination-button">50</button>
+    <button class="pagination-button">100</button>
+    <button class="pagination-button">150</button>
+    <button class="pagination-button">...</button>
+    <script>
+        // Funções JavaScript aqui
+    </script>
+</body>
+</html>
+        
+        <script src="ajax.js"></script>
+        
+        
+        
+        
+        
