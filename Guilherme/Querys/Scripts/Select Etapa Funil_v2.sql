@@ -9,4 +9,5 @@ select j.name
                       '$[*]' columns (name int path '$')
                     )j
 )
-and cfe.status ='A';
+and cfe.status ='A'
+ORDER BY nr_sequencia ASC;
