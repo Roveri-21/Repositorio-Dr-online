@@ -14,3 +14,10 @@ DELETE: Método específico para remoção de dados no servidor
 
 //Para passar dados sensiveis use Request Body sendo eles objetos 
 //exemplo Request Body = {nome:'Node.js' tipo:'Backend'}
+
+Quando queremos fazer alguma requisição em uma Api seja para fazer login, criar alguma informação, atualizar para fazer isso precisamos chamar alguma Rota.
+Como você já viu na aula sobre Api Rest, as rotas utilizam métodos HTTP que são GET, POST, PUT, DELETE
+Então quando queremos criar uma rota que vai criar um novo usuário na nossa aplicação precisamos criar uma rota do tipo POST. Quando usamos o método POST em uma rota estamos enviando ao servidor falando que queremos criar alguma informação (Criar algo).
+Quando queremos apenas buscar alguma informação como por exemplo, lista de produtos, aí usamos método GET.
+Quando queremos atualizar alguma informação JÁ EXISTENTE ai criamos rotas com método PUT.
+E não menos importante quando queremos DELETAR algo usamos o método DELETE.
