@@ -178,3 +178,46 @@ input[type="number"]{
   background-color: #fdf9f5;
   
 }
+
+
+.cadastro label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.cadastro textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  max-height: 250px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  height: 100px; /* Altura desejada para o campo de descrição */
+}
+
+.cadastro button {
+  background-color: #4bb650;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.cadastro button:hover {
+  background-color: #45a049;
+}
+.cadastro input,
+.cadastro textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
