@@ -1,0 +1,5 @@
+ETL
+E um processo que a ferramenta do talend faz
+-Extração
+-Transfomação 
+-Load (Carregar)
