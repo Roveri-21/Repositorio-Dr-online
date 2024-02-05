@@ -10,3 +10,8 @@ inner join trackeador_usuario tu on tu.idtrackeador_usuario = ta.idtrackeador_us
 WHERE ta.dados is not NULL 
 order by ta.idtrackeador_acao  DESC;
 
+
+
+
+
+function x () { if (('$[sessao_gclid]$' || '$[sessao_gbraid]$' || '$[sessao_wbraid]$')&&'$[post_id]$'=="1831") return 328;if ('$[sessao_gclid]$' || '$[sessao_gbraid]$' || '$[sessao_wbraid]$') return 327;if (('$[sessao_fbclid]$') &&'$[post_id]$'=="1831")return 324;if ('$[sessao_fbclid]$')return 323; if '$[post_id]$'=="1831" return 326;return 325;}
