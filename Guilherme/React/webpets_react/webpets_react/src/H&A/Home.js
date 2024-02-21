@@ -1,27 +1,28 @@
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// import logo from './logo.svg';
 import './Front.css';
+import Tabela_Venda from '../Componets/Tabela_Venda';
 import Cadastro from './Cadastro';
+import Estoque from './Estoque';
+// import GraficoBarra from './componentes/GraficoBarra';
+// import GraficoRosquinha from './componentes/Tabela_Venda';
 
-function Home() { // conteudo que vai manter quando clicar em uma link
+function Home() {
   return (
     <div>
       <div className="menu" id="menu">
         <img src="imagen/canva-brown-black-simple-modern-pet-shop-logo-3HtOB_YFCeQ.jpg" alt="Logo" />
         <ul>
           <li className='lista ativa'>
-            <a>
-              <span className='icone'>
-              </span>
+            <Link to="/Home">
               <span className='lista'>Home</span>
-            </a>
+            </Link>
           </li>
         </ul>
 
         <ul>
           <li className='lista ativa'>
             <Link to="/Cadastro">
-              <span className='icone'>              
-              </span>
               <span className='lista'>Cadastro</span>
             </Link>
           </li>
@@ -29,18 +30,14 @@ function Home() { // conteudo que vai manter quando clicar em uma link
 
         <ul>
           <li className='lista'>
-            <a>
-              <span className='icone'>
-              </span>
+          <Link to="/Estoque">
               <span className='lista'>Estoque</span>
-            </a>
+          </Link>
           </li>
         </ul>
         <ul>
           <li className='lista'>
-            <a id='log-out'>
-              <span className='icone'>
-              </span>
+            <a id='log-out'>                
               <span className='lista'>Sair</span>
             </a>
           </li>
@@ -48,13 +45,14 @@ function Home() { // conteudo que vai manter quando clicar em uma link
       </div>
       <Switch>
         <Route path="/Cadastro" component={Cadastro} />
-        <Route path="/" component={MainContent} />    {/*vai pegar todos os Router que começão com "/" */}
+        <Route path="/Estoque" component={Estoque} />
+        <Route path="/" component={MainContent} />
       </Switch>
     </div>
   );
 }
 
-function MainContent() { // conteudo principal que vai ser substituido
+function MainContent() {
   return (
     <main className="main-content" id="main-content">
       <div className="conteudo" id="conteudo" >
@@ -62,6 +60,8 @@ function MainContent() { // conteudo principal que vai ser substituido
           <div className='tabela' id='tabela'>
                 <fieldset>
                   <legend>Ultimas vendas</legend>
+                  {/* Tabela de vendas */}
+                  <Tabela_Venda/>
                 </fieldset>
                 <canvas id="chart"></canvas>
               </div>
@@ -93,6 +93,3 @@ function App() {
 }
 
 export default App;
-
-// usar a seguinte biblioteca para fazer o carregamento de pagina 
-//npm install react-router-dom@5
