@@ -1,11 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-// import logo from './logo.svg';
 import './Front.css';
-import Tabela_Venda from '../Componets/Tabela_Venda';
 import Cadastro from './Cadastro';
-import Estoque from './Estoque';
-// import GraficoBarra from './componentes/GraficoBarra';
-// import GraficoRosquinha from './componentes/Tabela_Venda';
 
 function Home() {
   return (
@@ -30,7 +25,9 @@ function Home() {
 
         <ul>
           <li className='lista'>
-          <Link to="/Estoque">
+            <a>
+              <span className='icone'>
+              </span>
               <span className='lista'>Estoque</span>
           </Link>
           </li>
@@ -45,8 +42,7 @@ function Home() {
       </div>
       <Switch>
         <Route path="/Cadastro" component={Cadastro} />
-        <Route path="/Estoque" component={Estoque} />
-        <Route path="/" component={MainContent} />
+        <Route path="/" component={MainContent} />    {/*vai pegar todos os Router que começão com "/" */}
       </Switch>
     </div>
   );

@@ -7,4 +7,5 @@ inner join crm_pessoa cp on
 inner join crm_pessoa_contato cpc on 
 	cpc.idcrm_pessoa = cp.idcrm_pessoa and cpc.nr_telefone LIKE '%9324'
 WHERE
-	cl.idcrm_funil = 17;
+	cl.idcrm_funil = 17
+	and cl.status = 'A';

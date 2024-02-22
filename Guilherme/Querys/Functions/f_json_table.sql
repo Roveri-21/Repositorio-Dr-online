@@ -2,6 +2,7 @@
 "[\"98\", \"1\"]" -- as barras \ farão o dbever esquecer [] chave de forma que ele possa executar mais de 1 parametro para a condição
 -- lembrando que para usar essa função devemos utilizar o in em uma condição wherer
 
+"[\"98\"]" -- exemplo com um json
 
 --exemplo
 	select

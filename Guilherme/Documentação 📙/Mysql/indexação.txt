@@ -1,0 +1,4 @@
+E quando definimos indices para o banco poder se localizar quando vamos fazer uma pesquisa, um exemplo disso o indices de livros.
+
+Exemplo:
+- o livro tem 400 paginas, porém das paginas 100 ate 150 e sobre material de carros, dessa forma a busca fica mais rapida pq ele tem apenas 50 paginas para procurar.
