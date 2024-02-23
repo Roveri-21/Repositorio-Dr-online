@@ -1,0 +1,2 @@
+insert into crm_lead_historico (idcrm_lead, ds_historico, dt_historico, ie_tipo_historico_lead, login_hist, ie_origem_acao) values 
+  (:idcrm_lead, 'Alteração do proprietário', CURRENT_TIMESTAMP(), 8, 'SystemPSSaude', 'A');
