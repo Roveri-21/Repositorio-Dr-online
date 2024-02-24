@@ -7,7 +7,7 @@ ta.idtrackeador_acao DESC;
 
 SELECT * from trackeador_acao ta
 inner join trackeador_usuario tu on tu.idtrackeador_usuario = ta.idtrackeador_usuario and tu.idtrackeador = 12 -- altere o codigo do trackeador para acompanhar as novas requisições no site
-WHERE ta.dados is not NULL 
+WHERE ta.dados is not NULL -- pega somente os formularios preenchidos
 order by ta.idtrackeador_acao  DESC;
 
 
