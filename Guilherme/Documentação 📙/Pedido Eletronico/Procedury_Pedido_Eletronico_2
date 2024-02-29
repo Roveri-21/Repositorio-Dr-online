@@ -1,0 +1,37 @@
+-- RODAR PROCEDURE PRA GERAR AS CAMPANHAS
+    BEGIN
+       PALMEDPROD.TEL_CRIAR_CAMPANHA(
+           'TO',
+           'S9ETO',
+           'P'
+       );
+        PALMEDPROD.TEL_CRIAR_CAMPANHA(
+            'PI',
+            'S9TPI',
+            'P'
+        );
+        PALMEDPROD.TEL_CRIAR_CAMPANHA(
+            'PA',
+            'S9TPA',
+            'P'
+        );
+        PALMEDPROD.TEL_CRIAR_CAMPANHA(
+            'MA',
+            'S9TMA',
+            'P'
+        );
+        PALMEDPROD.TEL_CRIAR_CAMPANHA(
+            'PB',
+            'S9TPB',
+            'P'
+        );
+       PALMEDPROD.TEL_CRIAR_CAMPANHA(
+           'RO',
+           'S9ERO',
+           'P'
+       );
+        --	p_UF			IN VARCHAR2,
+        --	p_ID_PROMOCAO 	IN VARCHAR2,
+        --	p_ORIGEMPED		IN CHAR			-- T -> TELEVENDAS , P -> PEDIDO ELETRÔNICO
+    END;
+    -- EDITAR IDENTIFICADOR DA CAMPANHA DE ACORDO COM O DA SEMANA ATUAL
