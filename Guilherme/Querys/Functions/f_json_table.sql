@@ -19,11 +19,12 @@ inner join profissional p on
 	and p.idestab_orig = ap.idestabelecimento
 where
 	DATE_FORMAT(dt_inicio_atendimento, '%Y-%m-%d') BETWEEN :dt_inicio and COALESCE(:dt_fim, CURRENT_DATE())
-	and(ap.ie_status_atendimento in(f_json_table(:status,ap.ie_status_atendimento))or :status is NULL);
+	and(ap.ie_status_atendimento in
+	)or :status is NULL);
 	
 -- use o seguinte parametro em status = "[\"C\",\"A\"]"
 
-
+-- and(ap.ie_status_atendimento in(f_json_table(:status,ap.ie_status_atendimento))or :status is NULL);
 
 --- para pegar um valo que foi armazenado como json e assim
 (select  GROUP_CONCAT(cp.ds_produto order by cp.ds_produto SEPARATOR ', ') -- deve ser feito um select onde contem a descrição de fato 
