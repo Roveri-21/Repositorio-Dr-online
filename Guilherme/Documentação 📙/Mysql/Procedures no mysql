@@ -1,0 +1,98 @@
+-- Sintaxe para criação de stored procedures no MySQL
+-- /////////
+DELIMITER $$
+CREATE PROCEDURE nome_procedimento (parâmetros)
+BEGIN
+/*CORPO DO PROCEDIMENTO*/
+END $$
+DELIMITER ;
+-- /////////
+
+-- Sintaxe para chamar um stored procedure
+-- /////////
+CALL nome_procedimento(parâmetros);
+-- /////////
+
+-- Usando parâmetro de entrada
+-- /////////
+DELIMITER $$
+CREATE PROCEDURE Selecionar_Produtos(IN quantidade INT)
+BEGIN
+SELECT * FROM PRODUTOS
+LIMIT quantidade;
+END $$
+DELIMITER ;
+-- Esse procedimento tem por função fazer um select na tabela PRODUTOS,limitando a quantidade de registros pela quantidade recebida como parâmetro.
+-- Assim, caso desejássemos selecionar dois registros dessa tabela, poderíamos usar o procedure como mostra a Listagem 5.
+-- /////////
+
+-- Chamando procedure com parâmetro de entrada
+-- /////////
+CALL Selecionar_Produtos(2);
+-- /////////
+
+
+-- Usando parâmetro de saída
+-- /////////
+DELIMITER $$
+CREATE PROCEDURE Verificar_Quantidade_Produtos(OUT quantidade INT)
+BEGIN
+SELECT COUNT(*) INTO quantidade FROM PRODUTOS;
+END $$
+DELIMITER ;
+-- A função desse procedimento é retornar a quantidade de registros da tabela PRODUTOS, passando esse valor para a variável de saída “quantidade”.
+-- Para isso foi utilizada a palavra reservada INTO. Para chamá-lo, usamos um símbolo de arroba (@) seguido do nome da variável que receberá o valor de saída.
+-- Feito isso, a variável poderá ser usada posteriormente, como vemos na Listagem 7.
+-- /////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Chamando procedure com parâmetro de saída
+-- /////////
+CALL Verificar_Quantidade_Produtos(@total);
+SELECT @total;
+-- Ao executar a segunda linha, teremos como retorno o valor da variável @total, que será preenchida no procedure.
+-- O terceiro exemplo mostra um stored procedure chamado Elevar_Ao_Quadrado, que recebe uma variável e a altera,
+-- definindo-a como o seu próprio valor elevado à segunda potência.
+-- /////////
+
+-- Usando parâmetro de entra e saída
+-- /////////
+DELIMITER $$
+CREATE PROCEDURE Elevar_Ao_Quadrado(INOUT numero INT)
+BEGIN
+SET numero = numero * numero;
+END $$
+DELIMITER ;
+-- Nesse caso, a mesma variável é usada como entrada e saída, como vemos na chamada da Listagem 9.
+-- /////////
+
+-- Chamando procedure com parâmetro de entrada e saída
+-- /////////
+SET @valor = 5;
+CALL Elevar_Ao_Quadrado(@valor);
+SELECT @valor;
+-- Usando variáveis no corpo do procedimento
+-- É possível declarar variáveis no corpo dos stored procedures, para isso basta utilizar a seguinte sintaxe:
+-- /////////
+
+
+--Sintaxe de declaração de variáveis
+-- /////////
+DECLARE nome_variável TIPO DEFAULT valor_padrao;
+--A palavra reservada DECLARE é obrigatória e é a responsável por indicar que uma variável será declarada com o nome “nome_variavel” (que segue as mesmas regras de nomeação de variáveis). O TIPO é o tipo de dados da variável (int, decimal, varchar, etc). A palavra reservada DEFAULT é opcional e deve ser usada quando se deseja definir um valor inicial (valor_padrao) para a variável.
+--A declaração das variáveis deve ser feita logo no início do corpo do procedure, para aquelas que serão utilizadas em todo o procedimento, ou dentro de um bloco BEGIN-END específico que limite seu escopo.
+--Para definir um valor para uma variável, usamos as palavras reservadas SET (no caso de passagem direta de valor, como na Listagem 8) ou INTO (no caso de associação de valores dentro de consultas, como na Listagem 6).
+--Outro ponto importante de se citar é o ESCOPO das variáveis, que define em que pontos elas são reconhecidas. Uma variável definida dentro de um bloco BEGIN/END é válida somente dentro dele, ou seja, após o END ela já não é mais reconhecida. Assim, é possível definir várias variáveis com o mesmo nome, mas dentro de blocos BEGIN/END distintos.
+--Por sua vez, variáveis cujo nome inicia com arroba (@), são chamadas variáveis de sessão, e são válidas enquanto durar a sessão (exemplo da Listagem 9).
+-- /////////
