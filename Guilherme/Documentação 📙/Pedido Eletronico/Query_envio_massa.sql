@@ -180,7 +180,7 @@ SELECT
 FROM 		TEL_CLIENTE 					TC
 INNER JOIN 	pcclient 						cli 	ON (tc.codcli = cli.codcli)
 INNER JOIN 	TEL_CAMPANHA 					T 		ON (TC.ID_CAMPANHA = T.ID)
-INNER JOIN 	TEL_CLIENTE_TELEFONES_CAMPANHA 	TCTC  	ON (TC.CODCLI = TCTC.CODCLI AND TC.ID_CAMPANHA = TCTC.ID_CAMPANHA)
+INNER JOIN  TEL_CLIENTE_TELEFONE            TCTC    ON (TC.CODCLI = TCTC.CODCLI)
 WHERE 		1=1 
 	AND cli.numregiaocli IS NOT NULL 
 	AND trunc(sysdate) between t.dt_inicio and t.dt_fim
