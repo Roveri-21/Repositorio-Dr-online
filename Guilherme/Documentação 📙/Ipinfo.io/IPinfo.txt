@@ -1,0 +1,10 @@
+A API gratuita IPinfo é responsável por catalogar informações como endereço IP, cidade, região
+e outros detalhes do usuário.
+
+Atualmente, a plataforma Saúde utiliza essa API gratuitamente para gravar todos os registros de 
+IP que acessam nosso sistema. No entanto, muitas conexões não têm informações registradas,
+como a cidade e a região.
+
+Para resolver essa questão, foi aberta uma solicitação para criar uma requisição GET na API, a fim
+de obter informações como cidade e região.
+Em casos em que a requisição não retorna informações, foi decidido desativar as conexões sem esses dados.

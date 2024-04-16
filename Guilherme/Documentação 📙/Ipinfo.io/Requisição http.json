@@ -1,0 +1,18 @@
+{
+    "method": "get",
+    "url": "https://ipinfo.io/[:ip]/json",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "paramsExtra": {
+      "city": null,
+      "region": null,
+      "hostname": null,
+      "country": null,
+      "org": null,
+      "postal": null,
+      "timezone": null,
+      "loc": null,
+      "bogon": false
+    }
+  }
