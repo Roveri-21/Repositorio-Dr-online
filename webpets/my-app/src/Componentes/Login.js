@@ -15,7 +15,6 @@ function Login() {
         <button type='submit'>Entrar</button>
       </form>
       <p>Não tem uma conta ainda? <a href='Cadastro.html'>Criar novo cadastro</a></p>
-            <p>Esqueceu a senha? <a href='Cadastro.html'>Alterar a senha</a></p>
       </div>
     </div>
   );
