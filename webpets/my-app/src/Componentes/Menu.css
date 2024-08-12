@@ -1,0 +1,59 @@
+/* Reset de estilos básicos para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .menu img {
+    max-width: 80%; /* A imagem se ajustará automaticamente à largura do seu contêiner */
+    height: auto; /* A altura será ajustada proporcionalmente */
+    border-radius: 40%;
+    border: 3px solid #e18739;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: -30px;
+    margin-left: 20px;
+    max-height: auto;
+  }
+  /* Estilos para o menu */
+  .menu {
+    width: 250px;
+    height: 100%;
+    padding-top: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #575451;
+    box-shadow: 5px 0 5px  #e18739;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-y: auto;
+  }
+  /* Estilos para os itens do menu */
+  .menu ul{
+    padding-top: 10%;
+      list-style: none;
+  }
+  .menu ul ul {
+    display: none;
+    top: 0;
+    left: 100%;
+  }
+  /* Estilos para item da lista*/
+  .menu ul li {
+    position: relative;
+    padding: 10px;
+    line-height: 40px;
+  }
+  /* Estilos para os links do menu */
+  .menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 20px;
+    position: sticky;
+    transition: color 0.3s; /* Adiciona transição suave na cor do texto */
+  }
+  /* Estilos para o conteúdo */
+  
