@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; // Hook função especial que permite utilizar recursos do React
-import { cpfMask } from './Mask';
+import { cpfMask } from './Mask'
+import './InputCpfMask.css';
 
 function InputCpfMask() { // Nome da função componente com letra maiúscula
   const [cpf, setCpf] = useState(''); // Armazenando as informações do CPF
@@ -9,8 +10,8 @@ function InputCpfMask() { // Nome da função componente com letra maiúscula
   };
 
   return (
-    <div>
-      <label htmlFor='cpf'>CPF</label> {/* Corrigido para htmlFor */}
+    <div id="CPF" >
+      <label htmlFor='cpf'>Cpf:</label> {/* Corrigido para htmlFor */}
       <input
         type='text'
         id='cpf'

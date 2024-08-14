@@ -1,0 +1,14 @@
+/* Estilos uniformes para todos os campos de entrada */
+.input-cpf {
+    flex: 1 1 45%; /* Ajusta a largura do campo para que se alinhe com outros inputs */
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    width: 100%; /* Garante que o input ocupe a largura total disponível */
+}
+
+.input-cpf input {
+    width: 100%; /* Garante que o input ocupe a largura total do contêiner */
+}
