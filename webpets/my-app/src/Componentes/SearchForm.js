@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SearchForm.css';
 import InputCpfMask from './InputCpfMask'
+
 function SearchForm() {
     return (
         <div className='personal-data'>
@@ -12,9 +13,9 @@ function SearchForm() {
                 <input type="text" id="nomeProduto" placeholder="Nome Produto" />
                 <label for="valorProduto">Valor Produto:</label>
                 <input type="text" id="valorProduto" placeholder="Valor Produto" />
-                <InputCpfMask id="CPF" />
                 <label for="dataVencimento">Data de Vencimento:</label>
                 <input type="date" id="dataVencimento" placeholder="Data de Vencimento" />
+                <InputCpfMask />
                 <button id="buttonAdicionar">Buscar</button>
             </fieldset>
         </div>
