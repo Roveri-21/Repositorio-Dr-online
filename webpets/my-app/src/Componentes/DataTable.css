@@ -32,3 +32,18 @@
     background-color: #e18739;
     color: #fff;
   }
+
+  #refresh {
+    background-color: hsl(28, 74%, 55%);
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* Espaço entre o campo e o botão */
+    margin-top: 10px;
+    align-self: flex-start;
+    width: auto;
+    white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
+}
