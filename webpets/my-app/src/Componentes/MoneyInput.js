@@ -5,6 +5,7 @@ const MoneyInput = ({ id }) => {
   return (
     <div id={id}>
       <NumericFormat
+        id='MoneyInput'
         thousandSeparator=","
         decimalSeparator="."
         prefix="R$ "
