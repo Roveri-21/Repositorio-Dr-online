@@ -1,0 +1,18 @@
+.popup {
+    position: fixed;
+    top: 20px; /* Define a posição no topo da tela */
+    right: 20px; /* Define a posição à direita */
+    background-color: rgba(255, 0, 0, 0.8); /* Cor de fundo do pop-up */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .popup.show {
+    opacity: 1; /* Mostra o pop-up */
+  }
+  
