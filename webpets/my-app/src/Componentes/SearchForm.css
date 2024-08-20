@@ -1,4 +1,4 @@
-fieldset {
+#formularioAdicionar {
     display: flex;
     flex-wrap: wrap; /* Permite que os elementos se quebrem para a linha de baixo se necessário */
     padding: 20px;
@@ -10,7 +10,7 @@ fieldset {
     box-sizing: border-box;
     gap: 10px; /* Espaço entre os campos */
 }
-fieldset legend {
+#legendsearch{
     background-color: #e18739;
     color: #fff;
     padding: 5px 10px;
@@ -27,11 +27,7 @@ fieldset legend {
 .input-cpf {
     flex: 1 1 45%; /* Ajusta a largura do campo CPF */
 }
-
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-  
+#MoneyInput{
     padding: 5px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -39,7 +35,24 @@ input[type="date"] {
     box-sizing: border-box;
 }
 
-button {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#selectstatusprod{
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+#buttonsearch {
     background-color: hsl(28, 74%, 55%);
     color: #fff;
     padding: 12px 20px;
@@ -52,6 +65,20 @@ button {
     width: auto;
     white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
 }
+#buttonAdicionar {
+    background-color: hsl(92, 63%, 39%);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* Espaço entre o campo e o botão */
+    align-self: flex-start;
+    width: auto;
+    white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
+}
+
 
 button:hover {
     background-color: #d17131;
