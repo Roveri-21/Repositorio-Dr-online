@@ -158,9 +158,11 @@ function DataTable() {
                   </tr>
                </tbody>
             </table>
-            <button id='refresh'>50</button>
-            <button id='refresh'>100</button>
-            <button id='refresh'>150</button>
+            <select id='item-limit'>
+            <option value="refresh50">50</option>
+            <option value="Vencido100">100</option>
+            <option value="Vencido150">150</option>
+            </select>
          </fieldset>
       </div>
 

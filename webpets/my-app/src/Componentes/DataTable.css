@@ -1,49 +1,74 @@
 #legendTable {
-    background-color: #e18739;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-weight: bold;
-    box-shadow: none;
+  background-color: #e18739;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: none;
 }
-#FieldseTable {
-    flex-wrap:nowrap; /* Permite que os elementos se quebrem para a linha de baixo se necessário */
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-top: 10px;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    gap: 10px; /* Espaço entre os campos */
-}
-#tabelaProdutos {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  #tabelaProdutos th, #tabelaProdutos td {
-    border: 1px solid #ddd;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  #tabelaProdutos th {
-    background-color: #e18739;
-    color: #fff;
-  }
 
-  #refresh {
-    background-color: hsl(28, 74%, 55%);
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Espaço entre o campo e o botão */
-    margin-top: 10px;
-    align-self: flex-start;
-    width: auto;
-    white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
+#FieldseTable {
+  flex-wrap: nowrap;
+  padding: 20px;
+  padding-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+#tabelaProdutos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabelaProdutos th, #tabelaProdutos td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+#tabelaProdutos th {
+  background-color: #e18739;
+  color: #fff;
+}
+
+.tabela-corpo {
+  display: block;
+  max-height: 300px; /* Altura máxima de 300px para aproximadamente 15 linhas */
+  overflow-y: auto;
+}
+
+#tabelaProdutos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabelaProdutos th, #tabelaProdutos td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+#tabelaProdutos th {
+  background-color: #e18739;
+  color: #fff;
+}
+
+#item-limit {
+  background-color: hsl(28, 74%, 55%);
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  align-self: flex-start;
+  width: auto;
+  white-space: nowrap;
 }
