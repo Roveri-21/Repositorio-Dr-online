@@ -1,6 +1,6 @@
 #formularioAdicionar {
     display: flex;
-    flex-wrap: wrap; /* Permite que os elementos se quebrem para a linha de baixo se necessário */
+    flex-wrap: wrap;
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -8,8 +8,9 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    gap: 10px; /* Espaço entre os campos */
+    gap: 10px; /* Espaço entre as divs */
 }
+
 #legendsearch{
     background-color: #e18739;
     color: #fff;
@@ -18,69 +19,49 @@
     font-weight: bold;
     box-shadow: none;
 }
+
 .field-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px; /* Espaço entre os campos e o botão */
 }
 
-.input-cpf {
-    flex: 1 1 45%; /* Ajusta a largura do campo CPF */
-}
-#MoneyInput{
-    padding: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
+/* Estilo para todas as divs de campo */
+.field-group > div {
+    flex: 1 1 200px; /* Largura mínima de 200px, flexível para ocupar o espaço disponível */
+    max-width: 100%; /* Limita a largura máxima ao tamanho da linha */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
 }
 
+/* Estilo geral para os inputs */
 input[type="text"],
 input[type="number"],
-input[type="date"] {
-    padding: 5px;
+input[type="date"],
+#selectstatusprod,
+#MoneyInput {
+    width: 100%; /* Garante que o input ocupe a largura total da div */
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-sizing: border-box;
 }
 
-#selectstatusprod{
-    padding: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
 #buttonsearch {
     background-color: hsl(28, 74%, 55%);
     color: #fff;
     padding: 12px 20px;
+    margin-top: 17px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Espaço entre o campo e o botão */
     align-self: flex-start;
-    width: auto;
     white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
 }
-#buttonAdicionar {
-    background-color: hsl(92, 63%, 39%);
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Espaço entre o campo e o botão */
-    align-self: flex-start;
-    width: auto;
-    white-space: nowrap; /* Evita que o texto do botão quebre para a linha de baixo */
-}
-
 
 button:hover {
     background-color: #d17131;
     transform: scale(1.05);
 }
+
