@@ -10,6 +10,10 @@ function SearchForm() {
             <legend id="legendsearch">Pesquisa</legend>
             <div className="field-group">
                 <div>
+                    <label for="MoneyInput">Nome do vendedor:</label>
+                    <InputNameMask />
+                </div>
+                <div>
                     <label for="nomeProduto">Nome Produto:</label>
                     <input type="text" id="nomeProduto" placeholder="Nome Produto" />
                 </div>
@@ -25,7 +29,7 @@ function SearchForm() {
                     <InputCpfMask />
                 </div>
                 <div>
-                    <label for="selectstatusprod">Escolha o estado do Produto:</label>
+                    <label for="selectstatusprod">Status:</label>
                     <select id="selectstatusprod">
                         <option value="Vencido">Vencido</option>
                         <option value="Proxvencimento">Proximo do Vencimento</option>
