@@ -38,7 +38,6 @@ function InputNameMask() {
 
   return (
     <div>
-      <label for="InputNameMask">Nome Vendedor:</label>
       <input
         type="text"
         id="nomeVendedor"
