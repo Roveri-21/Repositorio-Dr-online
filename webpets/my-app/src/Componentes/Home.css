@@ -1,0 +1,12 @@
+.conteudo {
+    width: calc(100% - 300px); /* A largura do conteúdo será o tamanho total menos a largura do menu */
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top:3%;
+    position: absolute;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 0 0px rgba(243, 4, 4, 0.2);
+    overflow-y: auto;  
+  }
