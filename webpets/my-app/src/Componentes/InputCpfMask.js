@@ -11,7 +11,7 @@ function InputCpfMask() { // Nome da função componente com letra maiúscula
 
   return (
     <div id="CPF" >
-      <label htmlFor='cpf'>Cpf:</label> {/* Corrigido para htmlFor */}
+      <label htmlFor='cpf'>CPF:</label> {/* Corrigido para htmlFor */}
       <input
         type='text'
         id='cpf'
