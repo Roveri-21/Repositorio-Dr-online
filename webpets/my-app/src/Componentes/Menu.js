@@ -1,57 +1,52 @@
 import './Menu.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Menu() {
   return (
     <div className="menu" id="menu">
       <ul>
         <li>
-          <a>
-            <span className='icone'>
-            </span>
+          <Link to="/">
+            <span className='icone'></span>
             <span className='lista'>Home</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <ul>
         <li className='lista'>
-          <a href='Estoque.html'>
-            <span className='icone'>
-            </span>
+          <Link to="/estoque">
+            <span className='icone'></span>
             <span className='lista'>Estoque</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <ul>
         <li className='lista'>
-          <a href='Admin.html'>
-            <span className='icone'>
-
-            </span>
+          <Link to="/admin">
+            <span className='icone'></span>
             <span className='lista'>Admin</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <ul>
         <li className='lista'>
-          <a href='Logs.html'>
-            <span className='icone'>
-            </span>
+          <Link to="/logs">
+            <span className='icone'></span>
             <span className='lista'>Logs</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <ul>
         <li className='lista'>
-          <a href='Login/Login.html' id='log-out'>
-            <span className='icone'>
-            </span>
+          <Link to="/login">
+            <span className='icone'></span>
             <span className='lista'>Sair</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
 export default Menu;

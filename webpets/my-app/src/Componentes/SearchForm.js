@@ -2,6 +2,7 @@ import './SearchForm.css';
 import InputCpfMask from './InputCpfMask'
 import MoneyInput from './MoneyInput'
 import InputNameMask from './InputNameMask'
+import AddProduto from'./AddProduto'
 
 function SearchForm() {
     return (
@@ -10,7 +11,7 @@ function SearchForm() {
             <legend id="legendsearch">Pesquisa</legend>
             <div className="field-group">
                 <div>
-                    <label for="MoneyInput">Nome do vendedor:</label>
+                    <label for="InputNameMask">Nome do vendedor:</label>
                     <InputNameMask />
                 </div>
                 <div>
@@ -38,7 +39,9 @@ function SearchForm() {
                 </div>
                 <div>
                     <button id="buttonsearch">Buscar</button>
+                        
                 </div>
+                <div><AddProduto /></div>
             </div>
         </fieldset>
     </div>
